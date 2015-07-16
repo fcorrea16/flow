@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Flow Chart Builder Page</title>
+  <link rel="stylesheet" href="./stylesheets/normalize.css">
+  <link rel="stylesheet" href="/stylesheets/type.css">
+  <link rel="stylesheet" href="/stylesheets/base.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/utilities.css">
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/jquery-ui.js"></script>
+  <script src="/javascripts/main.js"></script>
+  <script src="/javascripts/updates.js"></script>
+
+</head>
+
+<body>
+	<!-- This is the header -->
+  <div id="main-image"></div>
+  <h1 class="title">Title will go here</h1>
+
+  <!-- This is where they can click to create new svg elements -->
+  <p class="instructions">Click on one of the options below to copy it into you canvas:</p>
+  <div class="options">
+    <div class="building-block question boxes f-left click-cursor">
+      <p>This is the question box...</p>
+    </div>
+   
+    <div class=" building-block vert-yes f-left click-cursor">
+      <svg height="50" width="50">
+        <g>
+          <line x1="25" y1="0" x2="25" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
+          <rect x="10" y="12" width="30" height="20" style="fill:rgb(26,230,140)" />
+          <text x="14" y="27" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+        </g>
+      </svg>
+    </div>
+    <div class="building-block vert-no f-left click-cursor">
+      <svg height="50" width="50">
+        <g>
+          <line x1="25" y1="0" x2="25" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
+          <rect x="10" y="12" width="30" height="20" style="fill:rgb(97,150,255)" />
+          <text x="15" y="27" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+        </g>
+      </svg>
+    </div>
+    <div class="building-block answer boxes f-left click-cursor">
+      <h4>This is the answer box</h4>
+    </div>
+    <div class=" building-block hort-yes f-left click-cursor ">
+      <svg height="50" width="50">
+        <g>
+          <line x1="0" y1="25" x2="50" y2="25" style="stroke:rgb(26,230,140);stroke-width:3" />
+          <rect x="10" y="14" width="30" height="20" style="fill:rgb(26,230,140)" />
+          <text x="14" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+        </g>
+      </svg>
+    </div>
+    <div class="building-block hort-no f-left click-cursor">
+      <svg height="50" width="50">
+        <g>
+          <line x1="0" y1="25" x2="50" y2="25" style="stroke:rgb(97,150,255);stroke-width:3" />
+          <rect x="10" y="14" width="30" height="20" style="fill:rgb(97,150,255)" />
+          <text x="15" y="29" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+        </g>
+      </svg>
+    </div>
+
+    <br class="clear">
+
+  </div>
+
+
+  <!-- this is the draggable area where items will append to  -->
+
+  <button class="btn save">Save</button>
+  <button class="btn clearArea">Empty</button>
+  
+  <div id="snaptarget" class="ui-widget-header" >
+
+
+    <br class="clear">
+  </div>
+
+  
+  <script type="text/javascript" src="scripts/angular.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

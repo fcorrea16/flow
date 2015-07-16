@@ -1,0 +1,115 @@
+/* ==========================================================================
+   PROFILE PAGE
+   ========================================================================== */
+
+.profile-box{
+	background-color: #CFCFCF;
+	width: 300px;
+	float: left;
+	padding: 30px;
+	min-height: 130px;
+	margin-left: 20px;
+}
+
+
+
+
+/* ==========================================================================
+   FLOW CHART BUILDER PAGE
+   ========================================================================== */
+
+#main-image{
+	background-color: #E6E6E6;
+	height: 300px;
+	width: 100%;
+}
+
+.title {
+	position: absolute;
+	top: 150px;
+	left:30px;
+}
+
+hr {
+	margin: 20px;
+	border-top: dashed 1px gray;
+
+}
+
+.instructions{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 30px;
+	color: black;
+	font-size: 16px;
+}
+
+#snaptarget .instructions{
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.f-left{
+	float: left;
+	margin-left: 20px;
+}
+
+.clear{
+	clear: both;
+}
+
+.options {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.click-cursor{
+	cursor: pointer;
+}
+
+
+#snaptarget {
+  height: 1000px;
+  width: 1000px;
+  border: dashed 1px gray;
+  margin: 10px 0 30px 30px;
+  padding: 0;
+}
+
+
+
+/* ==========================================================================
+   BUILDING BLOCKS
+   ========================================================================== */
+
+.boxes {
+	float: left;
+	width: 88px;
+	margin: 0;
+	padding: 5px;
+	text-align: center;
+	display: inline-block;
+}
+
+.question {
+	border: solid 1px gray;
+}
+
+.yn{
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.answer {
+	width: 90px;
+	background-color: #FFF93F;
+}
+
+.ui-widget-header p,
+.ui-widget-content p {
+  margin: 0;
+}
+
+

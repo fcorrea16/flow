@@ -1,4 +1,5 @@
-// app/routes.js
+var mongoose = require('mongoose');
+
 module.exports = function(app, passport) {
 
   // -- HOME PAGE (with login links) --
@@ -7,14 +8,77 @@ module.exports = function(app, passport) {
   });
 
 
-// -- PROFILE SECTION --
-  // we will want this protected so you have to be logged in to visit
+    // -- BUILDER PAGE (with login links) --
+  app.get('/builder', function(req, res) {
+    res.render('builder');
+  });
+
+
+
+
+
+
+
+
+
+  // -- PROFILE SECTION --
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile', {
       user: req.user // get the user out of session
     });
   });
+
+  app.post('/profile/update', isLoggedIn, function(req, res) {
+    var id = req.user._id
+    var User = mongoose.model('User');
+
+    User.findById(id, function(err, user) {
+      if (err) throw err;
+      console.log(user["local"]);
+      user.local.location = req.body.location;
+      user.local.name = req.body.name;
+      user.local.picture = req.body['picture-url'];
+      user.local.fun_question = req.body['fun-question'];
+      user.save(function(err){
+        if (err) throw err;
+        console.log("user updated, finally")
+        console.log(user)
+        res.redirect('/profile');
+      });
+
+    });
+
+  });
+
+
+      //   if (req.body.location != '') {
+      //   user.local.location = req.body.location;
+      // }
+      // if (req.body.name != '') {
+      //   user.local.name = req.body.name;
+      // }
+      // if (req.body['picture-url'] != '') {
+      //   user..local.picture = req.body['picture-url'];
+      // }
+      // if (req.body['fun-question'] != '') {
+      //   user.local.fun_question = req.body['fun-question'];
+      // }
+
+
+ app.get('/unlink/local', isLoggedIn, function(req, res) {
+    var user = req.user;
+    user.local.email = undefined;
+    user.local.password = undefined;
+    user.save(function(err) {
+      res.redirect('/profile');
+    });
+  });
+
+
+
+
+
 
 
 

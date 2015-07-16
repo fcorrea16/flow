@@ -4,23 +4,25 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Hello</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-  <style>
-      body {
-      	padding-top:80px;
-      }
-  </style>
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/type.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/utilities.css">
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/jquery-ui.js"></script>
+    <script src="/javascripts/main.js"></script>
 </head>
 <body>
+  <a href="/">Home</a>
+  <a href="/builder">Builder</a>
 	<div class="container">
-    <div class="jumbotron text-center">
-        <h1>Welcome</h1>
-        <a href="/login" class="btn btn-default">Login</a>
-        <a href="/signup" class="btn btn-default">Signup</a>
-        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+    <div >
+      <h1>Welcome</h1>
+      <a href="/login" class="btn btn-default">Login</a>
+      <a href="/signup" class="btn btn-default">Signup</a>
+      <a href="/auth/google" class="btn btn-danger">Google Login</a>
     </div>
-
-</div>
+  </div>
 </body>
 </html>
