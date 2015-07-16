@@ -11,7 +11,7 @@ window.addEventListener('load', function(){
 
 
 	$('.building-block').on('click', function(event){
-		var $newBlock = $(this).clone().addClass('.draggable-block').draggable({ containment: "#builder-canvas", scroll: false, snap: true, grid: [50, 50]}).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10').addClass('f-left');
+		var $newBlock = $(this).clone().addClass('.draggable-block').draggable({ containment: "#builder-canvas", scroll: false, snap: true, grid: [50, 50]}).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10');
 		
 		if ($newBlock.hasClass('question')){
 			console.log($newBlock.find('p'))

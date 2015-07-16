@@ -27,9 +27,9 @@
   <div class="building-block-container">
     <h4>Building Blocks:</h4>
     <hr>
-    <div class="building-block start-question margin-right-10 ">
+    <div class="building-block start-question margin-right-10 f-left ">
       <div style="position:absolute; text-align:center; height:120px; width:140px; margin-top: 50px; margin-left:30px;">
-        <h3 >Start</h3>
+        <h3 >Question 1</h3>
       </div>
       <svg height="200" width="200">
       <circle cx="100" cy="100" r="100" fill="#ED1E79" />
@@ -39,50 +39,50 @@
 
 
 
-    <div class="building-block question boxes margin-right-10">
-     <p>Question box</p>
+    <div class="building-block question boxes margin-right-10 f-left">
+      <p>Question box</p>
     </div>
    
     
 
-    <div class=" building-block hort-yes margin-right-10">
-      <svg height="30" width="100">
+    <div class=" building-block hort-yes margin-right-10 f-left">
+      <svg height="100" width="100">
         <g>
-          <line x1="10" y1="15" x2="90" y2="15" style="stroke:rgb(26,230,140);stroke-width:3" />
-          <rect x="30" y="5" width="40" height="20" style="fill:rgb(26,230,140)" />
-          <text x="38" y="20" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+          <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
+          <rect x="30" y="40" width="40" height="20" style="fill:rgb(26,230,140)" />
+          <text x="38" y="55" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
         </g>
       </svg>
     </div>
 
-    <div class=" building-block vert-yes margin-right-10">
+    <div class=" building-block vert-yes margin-right-10 f-left">
       <svg height="50" width="100">
         <g>
-          <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
+          <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(26,230,140);stroke-width:3" />
           <rect x="35" y="15" width="30" height="20" style="fill:rgb(26,230,140)" />
           <text x="39" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
         </g>
       </svg>
     </div>
    
-    <div class="building-block answer boxes margin-right-10">
+    <div class="building-block answer boxes margin-right-10 f-left">
       <h4>This is the answer box</h4>
     </div>
 
-    <div class="building-block hort-no margin-right-10">
+    <div class="building-block hort-no margin-right-10 f-left">
       <svg height="100" width="100">
         <g>
-          <line x1="10" y1="50" x2="80" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
-          <rect x="25" y="40" width="40" height="20" style="fill:rgb(97,150,255)" />
-          <text x="35" y="55" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+          <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
+          <rect x="30" y="40" width="40" height="20" style="fill:rgb(97,150,255)" />
+          <text x="40" y="55" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
         </g>
       </svg>
     </div>
 
-    <div class="building-block vert-no margin-right-10">
-      <svg height="50" width="100">
+    <div class="building-block vert-no margin-right-10 f-left">
+      <svg height="50" width="100" style="mergin:0; padding:0;">
         <g>
-          <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
+          <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(97,150,255);stroke-width:3" />
           <rect x="35" y="15" width="30" height="20" style="fill:rgb(97,150,255)" />
           <text x="40" y="29" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
         </g>
@@ -100,9 +100,11 @@
   <div class="builder-prefs">
     <h4>Preferences:</h4>
     <hr>
-    <button class="btn save">Save</button>
-    <button class="btn clear-container">Empty</button>
-    <button class="btn">View Mode</button>
+    <div class="prefs-buttons">
+      <button class="btn save">Save</button>
+      <button class="btn clear-container">Empty</button>
+      <button class="btn">View Mode</button>
+    </div>
     <div class="clear-both"></div>
     <h1 class="title chart-title" contenteditable="true" style="height=100px;"> Chart Title</h1>
   </div>

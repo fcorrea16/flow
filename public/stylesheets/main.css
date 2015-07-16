@@ -86,10 +86,12 @@
 	
 }
 
-.save{
-	margin-left: 10px;
-}
 
+.prefs-buttons{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
 /* ==========================================================================
    BUILDING BLOCKS
    ========================================================================== */
@@ -97,33 +99,33 @@
 .building-block{
 	box-sizing: border-box;
 	cursor: pointer;
-	float: left;
 	padding: 0;
 	margin: 0;
 }
 
 .building-block:hover {
-	transform: scale(1.2)
+	transform: scale(1.1)
 }
 
 
 .boxes {
 	box-sizing: border-box;
 	margin: 0;
-	padding: 20px;
+	padding: 14px;
 	text-align: center;
 	display: inline-block;
 	background-color: white;
 }
 
 .question {
-	border: solid 3px #B3B3B3;
+	border: solid 2px #B3B3B3;
 	min-height: 100px;
-
+	width: 100px;
 }
 
 .answer {
-	width: 100px;
+	width: 150px;
+	min-height: 100px;
 	background-color: #FFF93F;
 }
 
