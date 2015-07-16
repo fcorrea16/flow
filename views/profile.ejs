@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <style>
+    body {
+      padding-top:80px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="page-header text-center">
+    <h1>Hello</h1>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="well">
+        <% if (user.local.email) { %>
+          <p>
+            <strong>Your user id</strong>: <%= user._id %><br>
+            <strong>Your email</strong>: <%= user.local.email %><br>
+          </p>
+           <a href="/unlink/local" class="btn btn-default">Unlink</a>
+        <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+        <% } %>
+      </div>
+
+      <div class="well">
+        <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+        <% if (user.google.token) { %>
+          <p>
+            <strong>id</strong>: <%= user.google.id %><br>
+            <strong>token</strong>: <%= user.google.token %><br>
+            <strong>email</strong>: <%= user.google.email %><br>
+            <strong>name</strong>: <%= user.google.name %>
+          </p>
+
+          <a href="/unlink/google" class="btn btn-danger">Unlink</a>
+        <% } else { %>
+            <a href="/connect/google" class="btn btn-danger">Connect Google</a>
+        <% } %>
+      </div>
+
+    </div>
+</div>
+</body>
+</html>
