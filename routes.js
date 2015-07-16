@@ -45,7 +45,7 @@ module.exports = function(app, passport) {
 
   // -- SIGNUP --
   app.get('/signup', function(req, res) {
-    res.render('signup', {
+    res.render('signup.ejs', {
       message: req.flash('signupMessage')
     });
   });
@@ -115,24 +115,23 @@ module.exports = function(app, passport) {
   // user account will stay active in case they want to reconnect in the future
 
     // local -----------------------------------
-    app.get('/unlink/local', function(req, res) {
-        var user            = req.user;
-        user.local.email    = undefined;
-        user.local.password = undefined;
-        user.save(function(err) {
-            res.redirect('/profile');
-        });
+  app.get('/unlink/local', isLoggedIn, function(req, res) {
+    var user = req.user;
+    user.local.email = undefined;
+    user.local.password = undefined;
+    user.save(function(err) {
+      res.redirect('/profile');
     });
+  });
 
     // google ---------------------------------
-    app.get('/unlink/google', function(req, res) {
-        var user          = req.user;
-        user.google.token = undefined;
-        user.save(function(err) {
-           res.redirect('/profile');
-        });
+  app.get('/unlink/google', isLoggedIn, function(req, res) {
+    var user = req.user;
+    user.google.token = undefined;
+    user.save(function(err) {
+      res.redirect('/profile');
     });
-
+  });
 
 
 }; // closes module exports
