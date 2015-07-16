@@ -50,10 +50,10 @@
       <h3 class="text-danger">Edit Main Account</h3>
         <form method="post" action="/profile/update">
           <input type="hidden" name="_method" value="put">
-          <input type="text" placeholder="Location" name="location" >
-          <input type="text" placeholder="Name" name="name" >
-          <input type="text" placeholder="Picture url" name="picture-url" >
-          <input type="text" placeholder="Why do you like flow charts?" name="fun-question" >
+          <input type="text" placeholder="Location" name="location" value="<%= user.local.location%>" >
+          <input type="text" placeholder="Name" name="name" value="<%= user.local.name%>">
+          <input type="text" placeholder="Picture url" name="picture-url" value="<%= user.local['picture-url']%>">
+          <input type="text" placeholder="Why do you like flow charts?" name="fun-question" value="<%= user.local['fun_question']%>">
           <button type="submit" class="btn btn-update">Update</button>
         </form>   
     </div>

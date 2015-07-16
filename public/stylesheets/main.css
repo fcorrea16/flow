@@ -24,36 +24,12 @@
 	width: 100%;
 }
 
-.title {
+/*.title {
 	position: absolute;
 	top: 150px;
-	left:30px;
-}
+	left:30px; 
+}*/
 
-hr {
-	margin: 20px;
-	border-top: dashed 1px gray;
-
-}
-
-.instructions{
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin-left: 30px;
-	color: black;
-	font-size: 16px;
-}
-
-#snaptarget .instructions{
-	display: inline-block;
-	margin-top: 20px;
-	margin-left: 20px;
-}
-
-.f-left{
-	float: left;
-	margin-left: 20px;
-}
 
 .clear{
 	clear: both;
@@ -64,42 +40,64 @@ hr {
 	margin-top: 20px;
 }
 
-.click-cursor{
-	cursor: pointer;
+.container-canvas{
+	width: 100%;
+	height: 100%;
 }
 
-
-#snaptarget {
+#builder-canvas {
   height: 1000px;
   width: 1000px;
   border: dashed 1px gray;
-  margin: 10px 0 30px 30px;
   padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
 }
 
+.editable1:hover {
+	background-color: #B2E6FF;
+}
+
+
+.editable2:hover {
+	background-color: #FFFF66;
+}
+
+
+.editable3:hover {
+	background-color: #FF6666;
+}
 
 
 /* ==========================================================================
    BUILDING BLOCKS
    ========================================================================== */
 
-.boxes {
+.building-block{
+	cursor: pointer;
 	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.building-block:hover {
+	transform: scale(1.2)
+}
+
+
+.boxes {
 	width: 88px;
 	margin: 0;
-	padding: 5px;
+	padding: 20px;
 	text-align: center;
 	display: inline-block;
+	background-color: white;
 }
 
 .question {
 	border: solid 1px gray;
-}
-
-.yn{
-	float: left;
-	padding: 0;
-	margin: 0;
+	min-height: 50px;
 }
 
 .answer {
@@ -107,9 +105,14 @@ hr {
 	background-color: #FFF93F;
 }
 
-.ui-widget-header p,
-.ui-widget-content p {
-  margin: 0;
+
+.building-block-container, .builder-prefs{
+	border-bottom: 1px solid gray;
+	padding: 10px;
+	padding-bottom: 30px;
+	margin: 30px;
 }
 
-
+.draggable-block{
+	margin:0;
+}

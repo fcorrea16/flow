@@ -19,38 +19,35 @@
 
 <body>
 	<!-- This is the header -->
-  <div id="main-image"></div>
-  <h1 class="title">Title will go here</h1>
+ <!--  <div id="main-image"></div> -->
+ <h1 >Build a Flow Chart</h1>
+
+  
 
   <!-- This is where they can click to create new svg elements -->
-  <p class="instructions">Click on one of the options below to copy it into you canvas:</p>
-  <div class="options">
-    <div class="building-block question boxes f-left click-cursor">
-      <p>This is the question box...</p>
+  <div class="building-block-container">
+    <h4>Building Blocks:</h4>
+    <br>
+
+
+    <div class="building-block start-question margin-right-10 ">
+      <div style="position:absolute; text-align:center; height:120px; width:120px; margin-top: 10px; margin-left:15px;">
+        <h3 >Start</h3>
+      </div>
+      <svg height="150" width="150">
+      <circle cx="75" cy="75" r="75" fill="#ED1E79" />
+    </svg>
+    </div>
+
+
+
+    <div class="building-block question boxes margin-right-10">
+     <p>Question box</p>
     </div>
    
-    <div class=" building-block vert-yes f-left click-cursor">
-      <svg height="50" width="50">
-        <g>
-          <line x1="25" y1="0" x2="25" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
-          <rect x="10" y="12" width="30" height="20" style="fill:rgb(26,230,140)" />
-          <text x="14" y="27" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
-        </g>
-      </svg>
-    </div>
-    <div class="building-block vert-no f-left click-cursor">
-      <svg height="50" width="50">
-        <g>
-          <line x1="25" y1="0" x2="25" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
-          <rect x="10" y="12" width="30" height="20" style="fill:rgb(97,150,255)" />
-          <text x="15" y="27" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
-        </g>
-      </svg>
-    </div>
-    <div class="building-block answer boxes f-left click-cursor">
-      <h4>This is the answer box</h4>
-    </div>
-    <div class=" building-block hort-yes f-left click-cursor ">
+    
+
+    <div class=" building-block hort-yes margin-right-10">
       <svg height="50" width="50">
         <g>
           <line x1="0" y1="25" x2="50" y2="25" style="stroke:rgb(26,230,140);stroke-width:3" />
@@ -59,7 +56,22 @@
         </g>
       </svg>
     </div>
-    <div class="building-block hort-no f-left click-cursor">
+
+    <div class=" building-block vert-yes margin-right-10">
+      <svg height="50" width="100">
+        <g>
+          <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
+          <rect x="35" y="15" width="30" height="20" style="fill:rgb(26,230,140)" />
+          <text x="39" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+        </g>
+      </svg>
+    </div>
+   
+    <div class="building-block answer boxes margin-right-10">
+      <h4>This is the answer box</h4>
+    </div>
+
+    <div class="building-block hort-no margin-right-10">
       <svg height="50" width="50">
         <g>
           <line x1="0" y1="25" x2="50" y2="25" style="stroke:rgb(97,150,255);stroke-width:3" />
@@ -69,25 +81,40 @@
       </svg>
     </div>
 
-    <br class="clear">
+    <div class="building-block vert-no margin-right-10">
+      <svg height="50" width="100">
+        <g>
+          <line x1="50" y1="0" x2="50" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
+          <rect x="35" y="15" width="30" height="20" style="fill:rgb(97,150,255)" />
+          <text x="40" y="29" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+        </g>
+      </svg>
+    </div>
+    
+
+
+    <br class="clear-both">
 
   </div>
 
 
   <!-- this is the draggable area where items will append to  -->
-
-  <button class="btn save">Save</button>
-  <button class="btn clearArea">Empty</button>
   
-  <div id="snaptarget" class="ui-widget-header" >
-
-
-    <br class="clear">
+  <div class="builder-prefs">
+    <h4>Preferences:</h4>
+    <button class="btn save">Save</button>
+    <button class="btn clear-container">Empty</button>
+    <button class="btn">View Mode</button>
+    <br class="clear-both">
   </div>
 
-  
-  <script type="text/javascript" src="scripts/angular.min.js"></script>
-  <script src="scripts/main.js"></script>
+  <div class="container-canvas">
+      <h1 class="title chart-title editable3" contenteditable="true">Type Chart title</h1>
+
+    <div id="builder-canvas" >
+    </div>
+  </div>
+
 </body>
 
 </html>

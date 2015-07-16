@@ -3,6 +3,12 @@ body {
   padding: 0;
 }
 
+
+
+/* ==========================================================================
+   BUTTON 
+   ========================================================================== */
+
 .btn { 
   background-color: #FFF93F;
   border: solid 1px #FFF93F;
@@ -18,7 +24,27 @@ body {
   background-color: #FFCC00;
  
 }
+.question-update, .question-update-cancel{
+  font-family:'Lato';
+  font-size: 11px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgb(26,230,140);
+  background-color: rgb(26,230,140);
+  padding: 3px;
+  display: inline-block;
+}
 
+
+.question-update-cancel{
+  border: 1px solid #E64848;
+  background-color: #E64848;
+  width:40px;
+}
+
+.inline-block{
+ display: inline-block;
+}
 
 
 /* ==========================================================================

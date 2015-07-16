@@ -1,10 +1,16 @@
 var mongoose = require('mongoose');
+var User = mongoose.model('User')
+var Chart = mongoose.model('Chart')
 
 module.exports = function(app, passport) {
 
   // -- HOME PAGE (with login links) --
   app.get('/', function(req, res) {
-    res.render('index');
+
+    var currentuser;
+    res.render('index')
+
+    
   });
 
 
@@ -12,10 +18,6 @@ module.exports = function(app, passport) {
   app.get('/builder', function(req, res) {
     res.render('builder');
   });
-
-
-
-
 
 
 
@@ -31,7 +33,6 @@ module.exports = function(app, passport) {
 
   app.post('/profile/update', isLoggedIn, function(req, res) {
     var id = req.user._id
-    var User = mongoose.model('User');
 
     User.findById(id, function(err, user) {
       if (err) throw err;
@@ -52,18 +53,7 @@ module.exports = function(app, passport) {
   });
 
 
-      //   if (req.body.location != '') {
-      //   user.local.location = req.body.location;
-      // }
-      // if (req.body.name != '') {
-      //   user.local.name = req.body.name;
-      // }
-      // if (req.body['picture-url'] != '') {
-      //   user..local.picture = req.body['picture-url'];
-      // }
-      // if (req.body['fun-question'] != '') {
-      //   user.local.fun_question = req.body['fun-question'];
-      // }
+
 
 
  app.get('/unlink/local', isLoggedIn, function(req, res) {
