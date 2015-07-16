@@ -18,7 +18,10 @@ body {
   font-size: 12px;
   font-family: 'Unica One';
   color: #333;
+  outline: none;
 }
+
+
 
 .btn:hover {
   background-color: #FFCC00;

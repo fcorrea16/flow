@@ -18,17 +18,28 @@
    FLOW CHART BUILDER PAGE
    ========================================================================== */
 
+.header-build{
+	background-color: #E6E6E6;
+	height: 180px;
+	width: 100%;
+	text-align: center;
+}
+
+.header-build h1{
+	margin: 0;
+	padding-top: 30px;
+}
+
+.builder-main-container{
+	margin: 30px;
+}
+
+
 #main-image{
 	background-color: #E6E6E6;
 	height: 300px;
 	width: 100%;
 }
-
-/*.title {
-	position: absolute;
-	top: 150px;
-	left:30px; 
-}*/
 
 
 .clear{
@@ -67,14 +78,24 @@
 
 .editable3:hover {
 	background-color: #FF6666;
+
 }
 
+.editable3:focus, .editable3{
+	outline: none;
+	
+}
+
+.save{
+	margin-left: 10px;
+}
 
 /* ==========================================================================
    BUILDING BLOCKS
    ========================================================================== */
 
 .building-block{
+	box-sizing: border-box;
 	cursor: pointer;
 	float: left;
 	padding: 0;
@@ -87,7 +108,7 @@
 
 
 .boxes {
-	width: 88px;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 20px;
 	text-align: center;
@@ -96,21 +117,20 @@
 }
 
 .question {
-	border: solid 1px gray;
-	min-height: 50px;
+	border: solid 3px #B3B3B3;
+	min-height: 100px;
+
 }
 
 .answer {
-	width: 90px;
+	width: 100px;
 	background-color: #FFF93F;
 }
 
 
-.building-block-container, .builder-prefs{
-	border-bottom: 1px solid gray;
-	padding: 10px;
+.building-block-container {
 	padding-bottom: 30px;
-	margin: 30px;
+
 }
 
 .draggable-block{

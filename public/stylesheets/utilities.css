@@ -17,3 +17,9 @@
 .margin-right-10 {
 	margin-right: 10px;
 }
+
+hr{
+	border-top: dashed 1px gray;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}

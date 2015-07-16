@@ -5,7 +5,6 @@ window.addEventListener('load', function(){
 	  $(".draggable-block").draggable({
 	    containment: "#builder-canvas", 
 			scroll: false,
-			grid: [50, 50],
 			snap: true
 	  });
 	})
