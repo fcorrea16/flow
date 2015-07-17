@@ -23,3 +23,7 @@ hr{
 	margin-top: 15px;
 	margin-bottom: 30px;
 }
+
+.inline-block{
+ display: inline-block;
+}

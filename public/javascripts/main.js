@@ -1,6 +1,7 @@
 
 window.addEventListener('load', function(){
 
+	// making building blocks draggable
 	$(function() {
 	  $(".draggable-block").draggable({
 	    containment: "#builder-canvas", 
@@ -10,46 +11,40 @@ window.addEventListener('load', function(){
 	})
 
 
+	// creating building blocks on builder canvas as they click on buttons
 	$('.building-block').on('click', function(event){
 		var $newBlock = $(this).clone().addClass('.draggable-block').draggable({ containment: "#builder-canvas", scroll: false, snap: true, grid: [50, 50]}).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10');
-		
-		if ($newBlock.hasClass('question')){
-			console.log($newBlock.find('p'))
+	
 			$newBlock.find('p').attr('contenteditable', 'true').addClass('editable1')
-		}
-
-		 if ($newBlock.hasClass('answer')){
 			$newBlock.find('h4').attr('contenteditable', 'true').addClass('editable2')
-		}
-
-		if ($newBlock.hasClass('start-question')){
 			$newBlock.find('h3').attr('contenteditable', 'true').addClass('editable3')
-		}
+
 	});
 
 
+	// making block only draggable if it's not being edited
  	$('#builder-canvas').on('mouseover', 'p', function(event){
  		$(this).parent().draggable('disable');
+ 		$(this).on('mouseout', 'p', function(event){
+ 			$(this).parent().draggable('enable');
+ 		});
 	});
 
-	 $('#builder-canvas').on('mouseout', 'p', function(event){
- 		$(this).parent().draggable('enable');
-	});
 
  	$('#builder-canvas').on('mouseover', 'h4', function(event){
  		$(this).parent().draggable('disable');
+ 		$(this).on('mouseout', 'h4', function(event){
+ 			$(this).parent().draggable('enable');
+		});
 	});
 
-	 $('#builder-canvas').on('mouseout', 'h4', function(event){
- 		$(this).parent().draggable('enable');
-	});
+
 
  	$('#builder-canvas').on('mouseover', 'h3', function(event){
  		$(this).parent().parent().draggable('disable');
-	});
-
-	 $('#builder-canvas').on('mouseout', 'h3', function(event){
- 		$(this).parent().parent().draggable('enable');
+ 		$(this).on('mouseout', 'h3', function(event){
+ 			$(this).parent().parent().draggable('enable');
+		});
 	});
 
 
@@ -62,8 +57,11 @@ window.addEventListener('load', function(){
 
 
   $('.clear-container').on('click', function(event){
-	 	window.alert("Are you sure you want to delete your canvas?")
- 		$('#builder-canvas').empty()
+	 	var confirm = window.confirm("Are you sure you want to delete your canvas?")
+
+		if (confirm === true) {
+    		$('#builder-canvas').empty()
+		}
 
  })
 

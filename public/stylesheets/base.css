@@ -45,8 +45,16 @@ body {
   width:40px;
 }
 
-.inline-block{
- display: inline-block;
+
+.delete-block:hover {
+  transform: scale(2);
+  color: red
+}
+
+.start-question .delete-block:hover{
+  transform: scale(2);
+  font-weight: bold;
+  color: white;
 }
 
 
