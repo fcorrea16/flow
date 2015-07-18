@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../views/partials/head %>
+</head>
+<body>
+	<h1>Charts done with Flow</h1>
+		<% for (var i = 0; i < chart.length; i++) { %>
+			<div>
+				<h3><a href="chart/<%= chart[i].id %>"><%= chart[i].chart.title %></a></h3>
+			</div>
+		<% } %>
+</body>
+</html>

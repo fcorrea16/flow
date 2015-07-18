@@ -1,0 +1,10 @@
+<% if (login) { %>
+    <a href="/logout" class="btn btn-default">Logout</a>
+    <a href="/builder">Builder</a>
+    <a href="/profile/">Preferences</a>
+    <a href="/users/<%= user_id %>">Public Profile</a>
+  <% } else { %>
+    <a href="/login" class="btn btn-default">Login</a>
+    <a href="/signup" class="btn btn-default">Signup</a>
+    <a href="/auth/google" class="btn btn-danger">Google Login</a>
+<% } %>

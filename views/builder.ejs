@@ -1,25 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="demoApp">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Flow Chart Builder Page</title>
-  <link rel="stylesheet" href="./stylesheets/normalize.css">
-  <link rel="stylesheet" href="/stylesheets/type.css">
-  <link rel="stylesheet" href="/stylesheets/base.css">
-  <link rel="stylesheet" href="/stylesheets/main.css">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/utilities.css">
-  <script src="/javascripts/jquery.js"></script>
-  <script src="/javascripts/jquery-ui.js"></script>
-  <script src="/javascripts/main.js"></script>
-  <script src="/javascripts/updates.js"></script>
+  <% include ../views/partials/head %>
+
+  <script src="/javascripts/sweetalert.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="/stylesheets/sweetalert.css">
 
 </head>
 
 <body>
-  <div class="header-build"
-      <h1 >Build a Flow Chart</h1>
+  <div class="header-build">
+      <h1> Build a Flow Chart</h1>
   </div>
   <div class="builder-main-container">
     
@@ -29,11 +20,12 @@
     <h4>Building Blocks</h4>
     <hr>
     <div class="building-block start-question margin-right-10 f-left">
-      <text class="delete-block" style="position:relative; top:-180px; right:-110px;font-family: 'Lato'; font-size:13px;">x</text>
+      <text class="delete-block" style="position:relative; top:25px; right:-100px;font-family: 'Lato'; font-size:13px;">x</text>
 
-      <div style="position:absolute; text-align:center; height:120px; width:140px; margin-top: -150px; margin-left:40px;">
-        
+      <div>
+        <div style="position:absolute; text-align:center; height:120px; width:140px; margin-top: 45px; margin-left:30px;">
         <h3 >Question 1</h3>
+        </div>
       </div>
       <svg height="200" width="200">
         <circle cx="100" cy="100" r="100" fill="#ED1E79" />
@@ -42,11 +34,11 @@
     </div>
 
 
-
     
     <div class="test-yn" style="width: 250px; float: left">
 
     <div class=" building-block hort-yes margin-right-10 f-left">
+      <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
       <svg height="100" width="100">
         <g>
           <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
@@ -55,14 +47,10 @@
         </g>
       </svg>
     </div>
-
-   
-    
-
-    
-    
+        
 
     <div class="building-block hort-no margin-right-10 f-left">
+      <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
       <svg height="100" width="100">
         <g>
           <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
@@ -77,6 +65,7 @@
     
 
     <div class="building-block vert-no margin-right-10 f-left">
+      <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
       <svg height="50" width="100" style="mergin:0; padding:0;">
         <g>
           <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(97,150,255);stroke-width:3" />
@@ -88,6 +77,7 @@
 
 
     <div class=" building-block vert-yes margin-right-10 f-left">
+      <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
       <svg height="50" width="100">
         <g>
           <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(26,230,140);stroke-width:3" />
@@ -115,6 +105,7 @@
   </div>
 
 
+
   <!-- this is the draggable area where items will append to  -->
   
   <div class="builder-prefs">
@@ -123,7 +114,7 @@
     <div class="prefs-buttons">
       <button class="btn save">Save</button>
       <button class="btn clear-container">Empty</button>
-      <button class="btn">View Mode</button>
+      <button class="btn">View Your Charts</button>
     </div>
     <div class="clear-both"></div>
     <h1 class="title chart-title" contenteditable="true" style="height=100px;"> Chart Title</h1>

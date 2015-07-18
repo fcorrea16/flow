@@ -1,131 +1,107 @@
 
-window.addEventListener('load', function(){
 
-	// making building blocks draggable
-	$(function() {
-	  $(".draggable-block").draggable({
-	    containment: "#builder-canvas", 
-			scroll: false,
-			snap: true
-	  });
-	})
+window.addEventListener('load', function() {
 
-
-	// creating building blocks on builder canvas as they click on buttons
-	$('.building-block').on('click', function(event){
-		var $newBlock = $(this).clone().addClass('.draggable-block').draggable({ containment: "#builder-canvas", scroll: false, snap: true, grid: [50, 50]}).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10');
-	
-			$newBlock.find('p').attr('contenteditable', 'true').addClass('editable1')
-			$newBlock.find('h4').attr('contenteditable', 'true').addClass('editable2')
-			$newBlock.find('h3').attr('contenteditable', 'true').addClass('editable3')
-
-	});
+    // making building blocks draggable
+    $(function() {
+        $(".draggable-block").draggable({
+            containment: "#builder-canvas",
+            scroll: false,
+            snap: true
+        });
+    })
 
 
-	// making block only draggable if it's not being edited
- 	$('#builder-canvas').on('mouseover', 'p', function(event){
- 		$(this).parent().draggable('disable');
- 		$(this).on('mouseout', 'p', function(event){
- 			$(this).parent().draggable('enable');
- 		});
-	});
+    // creating building blocks on builder canvas as they click on buttons
+    $('.building-block').on('click', function(event) {
+        var $newBlock = $(this).clone().addClass('.draggable-block').draggable({
+            containment: "#builder-canvas",
+            scroll: false,
+            snap: true,
+            grid: [50, 50]
+        }).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10');
+
+        $newBlock.find('p').attr('contenteditable', 'true').addClass('editable1')
+        $newBlock.find('h4').attr('contenteditable', 'true').addClass('editable2')
+        $newBlock.find('h3').attr('contenteditable', 'true').addClass('editable3')
+
+    });
 
 
- 	$('#builder-canvas').on('mouseover', 'h4', function(event){
- 		$(this).parent().draggable('disable');
- 		$(this).on('mouseout', 'h4', function(event){
- 			$(this).parent().draggable('enable');
-		});
-	});
+    // making block only draggable if it's not being edited
+    $('#builder-canvas').on('mouseover', 'p', function(event) {
+        $(this).parent().draggable('disable');
+    });
+
+    $('#builder-canvas').on('mouseout', 'p', function(event) {
+        $(this).parent().draggable('enable');
+    });
 
 
+    $('#builder-canvas').on('mouseover', 'h4', function(event) {
+        $(this).parent().draggable('disable');
+    });
 
- 	$('#builder-canvas').on('mouseover', 'h3', function(event){
- 		$(this).parent().parent().draggable('disable');
- 		$(this).on('mouseout', 'h3', function(event){
- 			$(this).parent().parent().draggable('enable');
-		});
-	});
-
-
- 
- $('.save').on('click', function(event){
- 		// probably what we'll send to the server.
- 		var flowHthml = $('#builder-canvas').html()
- 		console.log(flowHthml)
- })
+    $('#builder-canvas').on('mouseout', 'h4', function(event) {
+        $(this).parent().draggable('enable');
+    });
 
 
-  $('.clear-container').on('click', function(event){
-	 	var confirm = window.confirm("Are you sure you want to delete your canvas?")
+    $('#builder-canvas').on('mouseover', 'h3', function(event) {
+    	console.log($(this).parents().find('start-question'))
+        $(this).parent().parent().parent().draggable('disable');
+    });
 
-		if (confirm === true) {
-    		$('#builder-canvas').empty()
-		}
-
- })
-
-
+    $('#builder-canvas').on('mouseout', 'h3', function(event) {
+        $(this).parent().parent().parent().draggable('enable');
+    });
 
 
+    // save functionality
+    $('.save').on('click', function(event) {
+        // what we'll send to the server.
+        $('.delete-block').remove();
+        $('#builder-canvas').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
+        $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
+        $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+        
+        var $title = $('.chart-title').text()
+        var $flowHthml = $('#builder-canvas').html()
+        var chartInfo = { title: $title, content: $flowHthml };
+
+        $.post( '/savechart', chartInfo , function(data) {
+        });
+
+        swal("Chart Saved")
+        $('.confirm').on('click', function(event){
+            window.location.href = "/charts"
+        })
+       
+    })
+
+    // delete blocks from DOM
+    $('#builder-canvas').on('click', '.delete-block', function(event) {
+        $(this).parent().remove()
+    });
+
+    // clearing canvas
+    $('.clear-container').on('click', function(event) {
+        swal({
+            title: "Delete your canvas?",
+            text: "You will not be able to recover it.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#1AE68C",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: true
+        }, function() {
+             $('#builder-canvas').empty()
+        });
+    })
 
 
+    var chartHTML = $.parseHTML($('.db-html').text())
+    $('.load-chart').append(chartHTML)
+}); // closing window load
 
 
-});
-
-
-
-
-	// $('#builder-canvas').on('click', '.hort-yes', function(event){
-	//  	console.log('clicking on hort-yes')
-
-	//  })
-
-	// $('#builder-canvas').on('click', '.hort-no', function(event){
-	//  	console.log('clicking on hort-no')
-
-	//  })
-
-	// $('#builder-canvas').on('click', '.vert-yes', function(event){
-	//  	console.log('clicking on vert-yes')
-
-	//  })
-
-	// $('#builder-canvas').on('click', '.vert-no', function(event){
-	//  	console.log('clicking on vert-no')
-
-	//  })
-
-
-
-
-	// $('#builder-canvas').on('dblclick', '.question p', function(event){
-	//  	console.log('clicking on question')
-	//  	console.log($(this).text())
-	//  	console.log($(this).parent().find('.question-form'))
-	// 	$(this).hide();
-	// 	var $question = $(this).text();
-	// 	$(this).parent().find('.question-form').val($question);
-	// 	$(this).parent().find('.question-form').show();
-	 	
-
-
-	//  })
-
-
-	// $('#builder-canvas').on('click', '.start-question', function(event){
-	//  	console.log('clicking on start question')
-	//  	console.log($(this).find('text').text())
-	//  	$(this).find('text').text("clicked")
-
-	//  })
-
-
-
-	// $('#builder-canvas').on('click', '.answer', function(event){
-	//  	console.log('clicking on answer')
-
-	//  })
-
- 

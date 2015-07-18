@@ -1,30 +1,101 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User')
 var Chart = mongoose.model('Chart')
+var ObjectId = mongoose.Types.ObjectId
+
+
+
 
 module.exports = function(app, passport) {
 
   // -- HOME PAGE (with login links) --
   app.get('/', function(req, res) {
+    console.log(req.session.passport.user)
+    if (req.session.passport.user === undefined) {
+      var id = 0;
 
-    var currentuser;
-    res.render('index')
-
-    
+    } else{
+      var id = req.session.passport.user
+    }
+    res.render('index', {
+      user_id: id
+    })
   });
 
 
     // -- BUILDER PAGE (with login links) --
-  app.get('/builder', function(req, res) {
+  app.get('/builder', isLoggedIn, function(req, res) {
     res.render('builder');
+
+  });
+
+  app.post('/savechart', function(req, res) {
+    // console.log(req.body.title)
+    // console.log(req.body.content)
+    var title = req.body.title;
+    var content = req.body.content;
+    var currentUser = req.user._id
+
+    var newChart = new Chart();
+    newChart.user_id = currentUser;
+    newChart.chart.title = title;
+    newChart.chart.html = content;
+
+    newChart.save(function(err) {
+      if (err) {
+        throw err;
+        console.log("there was an error")
+      } else {
+        res.redirect('/chart/' + newChart._id);
+        console.log("no errors")
+      }
+    });
+  });
+
+
+   // -- CHART PAGES --
+  app.get('/chart/:id', function(req, res) {
+   Chart.findById(req.params.id, function(err, info) {
+      return res.render('chart', {
+        title: info.chart.title,
+        html: info.chart.html,
+        user: info.chart.user_id
+      });
+    });
+  });
+
+  app.get('/charts', function(req, res){
+    Chart.find().exec(function(err, chart){
+     res.render('charts', {
+      chart: chart, 
+      id: ObjectId
+      });
+    });
   });
 
 
 
+  // -- USER SECTION --
+  app.get('/users/:id', function(req, res) {
+
+   User.findById(req.params.id, function(err, db_user) {
+    if(err) {/*error!!!*/}
+      Chart.find({user_id: req.params.id} , function(err, db_charts) {
+        console.log(db_user)
+        console.log(db_charts)
+        if(err) {/*error!!!*/}
+
+        return res.render('user', {
+          user: db_user, 
+          charts: db_charts
+        })
+
+      });
+    });
+  });
 
 
   // -- PROFILE SECTION --
-  // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile', {
       user: req.user // get the user out of session
@@ -44,7 +115,6 @@ module.exports = function(app, passport) {
       user.save(function(err){
         if (err) throw err;
         console.log("user updated, finally")
-        console.log(user)
         res.redirect('/profile');
       });
 
@@ -64,8 +134,6 @@ module.exports = function(app, passport) {
       res.redirect('/profile');
     });
   });
-
-
 
 
 
@@ -111,9 +179,6 @@ module.exports = function(app, passport) {
     failureFlash: true // allow flash messages
   }));
 
-
-
-  
 
 
 
@@ -191,11 +256,13 @@ module.exports = function(app, passport) {
 }; // closes module exports
 
 
-// route middleware to make sure a user is logged in
+
+// to make sure a user is logged in
 function isLoggedIn(req, res, next) {
   // if user is authenticated in the session, carry on 
   if (req.isAuthenticated())
     return next();
+
   // if they aren't redirect them to the home page
   res.redirect('/');
 }
