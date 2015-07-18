@@ -15,6 +15,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
+// heroku:
+var cool = require('cool-ascii-faces');
 
 // -- CONFIG --
 var configDB = require('./config/database.js');

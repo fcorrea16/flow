@@ -2,11 +2,16 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User')
 var Chart = mongoose.model('Chart')
 var ObjectId = mongoose.Types.ObjectId
-
+var cool = require('cool-ascii-faces');
 
 
 
 module.exports = function(app, passport) {
+
+
+  app.get('/cool', function(request, response) {
+    response.send(cool());
+  });
 
   // -- HOME PAGE (with login links) --
   app.get('/', function(req, res) {
