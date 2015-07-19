@@ -1,9 +1,9 @@
 {
   "name": "flow1",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple flow chart builder",
   "engines": {
-    "node": "1.7.1"
+    "node": "0.12.2"
   },
   "main": "app.js",
   "dependencies": {
@@ -29,7 +29,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-  "start": "node app.js"
+    "start": "node app.js"
 },
   "author": "",
   "license": "ISC"
