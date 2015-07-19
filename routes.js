@@ -15,26 +15,18 @@ module.exports = function(app, passport) {
 
   // -- HOME PAGE (with login links) --
   app.get('/', function(req, res) {
-    console.log(req.session.passport.user + " log for index passport user")
-    if (req.session.passport.user === undefined) {
-      var id = 0;
-
-    } else{
-      var id = req.session.passport.user
-    }
-    res.render('index')
-    // res.render('index')
-
-    // res.render('index', {
-    //   user_id: id
-    // })
-
+    console.log(req.user)
+    res.render('index', {
+      user: req.user
+    })
   });
 
 
     // -- BUILDER PAGE (with login links) --
   app.get('/builder', isLoggedIn, function(req, res) {
-    res.render('builder');
+    res.render('builder', {
+      user: req.user
+    });
 
   });
 
@@ -73,9 +65,11 @@ module.exports = function(app, passport) {
     });
   });
 
+
   app.get('/charts', function(req, res){
     Chart.find().exec(function(err, chart){
      res.render('charts', {
+      user: req.user,
       chart: chart, 
       id: ObjectId
       });
@@ -130,7 +124,6 @@ module.exports = function(app, passport) {
     });
 
   });
-
 
 
 
@@ -264,7 +257,19 @@ module.exports = function(app, passport) {
 
 }; // closes module exports
 
+function currentUserId (req, res){
 
+// console.log(req.session.passport.user)
+//     if (req.session.passport.user === undefined) {
+//       var id = 0;
+
+//     } else{
+//       var id = req.session.passport.user
+//     }
+//     res.render('index', {
+//       user_id: id
+//     })
+}
 
 // to make sure a user is logged in
 function isLoggedIn(req, res, next) {

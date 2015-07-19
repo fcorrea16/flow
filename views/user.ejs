@@ -14,7 +14,7 @@
 					<% } %>
 			<% } %>
 	</h2>
-
+	<div class="container">
 	<h4><% if (user.google.fun_question != '')%> I love flow charts because it's <%= user.local.fun_question %></h4>
 	<h4> <%= user.local.location %></h4>
 	<img src="<% if (user.google.name != '')%><%= user.local.picture %>">
@@ -24,6 +24,7 @@
 				<h3><a href="/chart/<%= charts[i].id %>"><%= charts[i].chart.title %></a></h3>
 			</div>
 	<% } %>
+</div>
 
 </body>
 </html>
