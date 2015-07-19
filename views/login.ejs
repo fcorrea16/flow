@@ -4,7 +4,9 @@
   <% include ../views/partials/head %>
 </head>
 <body>
-  <a href="/">Home</a>
+  <% include ../views/partials/menu %>
+  <% include ../views/partials/nav %>
+
   <div class="container">
     <!-- show any messages that come back with authentication -->
     <% if (message.length > 0) { %>

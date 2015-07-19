@@ -4,7 +4,9 @@
   <% include ../views/partials/head %>
 </head>
 <body>
-  <a href="/">Home</a>
+  <% include ../views/partials/menu %>
+  <% include ../views/partials/nav %>
+
   <div class="container">
     <h2>Hello, <% if (user.local.name != '') { %><%= user.local.name %><% } %></h2>
     <a href="/logout" class="btn btn-default btn-sm">Logout</a>

@@ -1,0 +1,18 @@
+<div id="menu-wrapper" >
+  <ul id="menu">
+    <% if (login) { %>
+      <li><a href="/builder">Chart Builder</a></li>
+      <li><a href="/users/<%= user_id %>">Your Charts</a></li>
+      <li><a href="/charts">View All Charts</a></li>
+      <li><a href="/profile/">Preferences</a></li>
+      <li><a href="/logout" >Logout</a></li>
+    <% } else { %>
+      <li><a href="/charts">View All Charts</a></li>
+      <li><a href="/login" >Login</a></li>
+      <li><a href="/signup" >Signup</a></li>
+      <li><a href="/auth/google" >Google Login</a></li>
+      <p class="test-login"> To test use login: test@test.com and pass: test </p>
+    <% } %>
+  </ul>
+</div>
+

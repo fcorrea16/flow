@@ -78,15 +78,16 @@ p, .question{
 }
 */
 a {
-
 	text-decoration: none;
-
 }
 
 a:hover{
 	background-color: #FFCC00;
 }
 
+a:visited {
+	color: none;
+}
 
 
 

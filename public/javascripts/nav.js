@@ -1,33 +1,39 @@
 
 window.addEventListener('load', function() {
 
-function animateHamburger(e) {
-  // toggles the open class on the hamburger when clicked
-  $('#hamburger-button').children().first().toggleClass('rotate2')
-
-  $('#hamburger-button').children().first().next().toggleClass('hidden')
-  
-	$('#hamburger-button').children().last().toggleClass('rotate1')
-  // $(e.target).addClass("rotate")
-
-}
+  $('#hamburger-button').on("mouseover", expandPatties);
+  $('#hamburger-button').on("mouseout", retractPatties);
+  $('#hamburger-button').on("click", showMenu);
+  $('#hamburger-button').on("click", animatePatties)
 
 
-function mouseoverAnimation() {
-  console.log($(this).children())
-  console.log("hi")
+
+});
+
+var expandPatties = function(){
   $(this).children().addClass("mouseover")
 }
 
-function mouseoutAnimation() {
-  console.log($(this).children())
+var retractPatties = function(){
   $(this).children().removeClass("mouseover")
 }
 
+var animatePatties = function(){
+  $('#hamburger-button span:first-child').toggleClass('rotate1');
+  $('#hamburger-button span:last-child').toggleClass('rotate2')
+  $('#hamburger-button span:nth-child(2)').toggleClass('patty-hidden')
 
+}
 
-$('#hamburger-button').on("click", animateHamburger)
-$('#hamburger-button').on("mouseover", mouseoverAnimation)
-$('#hamburger-button').on("mouseout", mouseoutAnimation)
+var showMenu = function(){
+  $(this).parents().find($('#menu-wrapper')).toggleClass('menu-top');
+  if ($('#menu').css('margin-top') === '50px') {
+    $('#menu').css('margin-top', '110px');
+    $('#menu').css('opacity', '1')
+  } else {
+    $('#menu').css('margin-top', '50px')
+    $('#menu').css('opacity', '0')
+  }
 
-});
+}
+

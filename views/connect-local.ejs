@@ -4,7 +4,9 @@
   <% include ../views/partials/head %>
 </head>
 <body>
-  <a href="/">Home</a>
+  <% include ../views/partials/menu %>
+  <% include ../views/partials/nav %>
+  
   <div class="container">
     <% if (message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>

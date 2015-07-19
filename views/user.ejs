@@ -4,6 +4,8 @@
 	<% include ../views/partials/head %>
 </head>
 <body>
+	<% include ../views/partials/menu %>
+  <% include ../views/partials/nav %>
 	<h2> <% if (user.local.name != '') {%> 
 					<%= user.local.name %></h2>
 				<% } else { %>
@@ -12,7 +14,8 @@
 					<% } %>
 			<% } %>
 	</h2>
-	<h4>I love flow charts because it's <%= user.local.fun_question %></h4>
+
+	<h4><% if (user.google.fun_question != '')%> I love flow charts because it's <%= user.local.fun_question %></h4>
 	<h4> <%= user.local.location %></h4>
 	<img src="<% if (user.google.name != '')%><%= user.local.picture %>">
 

@@ -4,28 +4,13 @@
 	<% include ../views/partials/head %>
 </head>
 <body>
+  <% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
-  <a href="/">Home</a>
-  
-  <a href="/charts">All Charts</a>
-	<div class="container">
-    <div class="home-top-section">
-      <h1 class="logo">Flow</h1>
-      <div class="gradient-top"></div>
-      <div class="background-top"></div>
-    </div>
-    <div>
-      <% if (login) { %>
-        <a href="/logout" class="btn btn-default">Logout</a>
-        <a href="/builder">Builder</a>
-        <a href="/profile/">Preferences</a>
-        <a href="/users/<%= user_id %>">Public Profile</a>
-      <% } else { %>
-        <a href="/login" class="btn btn-default">Login</a>
-        <a href="/signup" class="btn btn-default">Signup</a>
-        <a href="/auth/google" class="btn btn-danger">Google Login</a>
-      <% } %>
+
+  <div id="container-home">
+    <div class="top-container"></div>
   </div>
+ 
 </body>
 </html>
 
