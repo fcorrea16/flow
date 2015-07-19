@@ -42,7 +42,9 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 })); 
-    // session secret ilovescotchscotchyscotchscotch
+
+// app.use(session({ secret: 'hellosecret' }));
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

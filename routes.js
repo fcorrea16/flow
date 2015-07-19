@@ -15,16 +15,20 @@ module.exports = function(app, passport) {
 
   // -- HOME PAGE (with login links) --
   app.get('/', function(req, res) {
-    console.log(req.session.passport.user)
+    console.log(req.session.passport.user + " log for index passport user")
     if (req.session.passport.user === undefined) {
       var id = 0;
 
     } else{
       var id = req.session.passport.user
     }
-    res.render('index', {
-      user_id: id
-    })
+    res.render('index')
+    // res.render('index')
+
+    // res.render('index', {
+    //   user_id: id
+    // })
+
   });
 
 
