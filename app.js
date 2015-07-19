@@ -1,6 +1,7 @@
 
 // -- SETUP --
 // get all the tools we need
+var http = require('http');
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 3000;
@@ -21,6 +22,35 @@ var cool = require('cool-ascii-faces');
 // -- CONFIG --
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url); // connect to our database
+
+// var http = require('http');
+// http.createServer(function (req, res) {
+//   res.writeHead(200, {'Content-Type': 'text/plain'});
+//   res.end('Hello World\n');
+// }).listen(1337, "127.0.0.1");
+// console.log('Server running at http://127.0.0.1:1337/');
+
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.  
+// var uristring = 
+//   process.env.MONGOLAB_URI || 
+//   process.env.MONGOHQ_URL || 
+//   'mongodb://localhost/HelloMongoose';
+
+
+// mongoose.connect(uristring, function (err, res) {
+//   if (err) { 
+//     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+//   } else {
+//     console.log ('Succeeded connected to: ' + uristring);
+//   }
+// });
+
+// var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
+
+
+
+
 
 require('./config/passport')(passport); // pass passport for configuration
 

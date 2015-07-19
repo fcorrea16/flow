@@ -4,14 +4,14 @@
 	<% include ../views/partials/head %>
 </head>
 <body>
-	<h1> <% if (user.local.name != '') {%> 
-					<%= user.local.name %></h1>
+	<h2> <% if (user.local.name != '') {%> 
+					<%= user.local.name %></h2>
 				<% } else { %>
 					<% if (user.google.name != '') { %>
 						<%= user.google.name %>
 					<% } %>
 			<% } %>
-	</h1>
+	</h2>
 	<h4>I love flow charts because it's <%= user.local.fun_question %></h4>
 	<h4> <%= user.local.location %></h4>
 	<img src="<% if (user.google.name != '')%><%= user.local.picture %>">
