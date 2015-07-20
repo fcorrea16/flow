@@ -23,7 +23,6 @@ var cool = require('cool-ascii-faces');
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url); // connect to our database
 
-
 require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
@@ -42,6 +41,11 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 })); 
+
+
+// method override
+var methodOverride = require('method-override')
+app.use(methodOverride('_method'))
 
 // app.use(session({ secret: 'hellosecret' }));
 

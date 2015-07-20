@@ -109,7 +109,7 @@ module.exports = function(app, passport) {
     });
   });
 
-  app.post('/charts/:id/delete', function(req, res){
+  app.delete('/charts/:id/delete', function(req, res){
     console.log(req.params.id); 
     // res.send('got a delete request')
     Chart.findByIdAndRemove(req.params.id, function(err, chart){
