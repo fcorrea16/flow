@@ -83,7 +83,8 @@ window.addEventListener('load', function() {
         $('.delete-block').remove();
         $('#builder-canvas').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
         $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
-        $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+        $('.container-canvas');
+        $('.boxes').children().find('h3').attr('contenteditable', 'false').removeClass('editable3')
         var chart_id = window.location.pathname.split('/')[2];
         var $title = $('.chart-title').text()
         var $flowHthml = $('#builder-canvas').html()
