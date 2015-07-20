@@ -11,4 +11,4 @@ $(window).on('load', function(){
 		$('.boxes').children().attr('contenteditable', 'true').addClass('editable2').addClass('editable1')
 		$('.container-canvas').find('h3').attr('contenteditable', 'true').addClass('editable3')
 
-}
+})
