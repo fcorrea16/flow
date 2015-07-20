@@ -275,7 +275,7 @@ module.exports = function(app, passport) {
   // the callback after google has authorized the user
   app.get('/connect/google/callback',
     passport.authorize('google', {
-      successRedirect: '/profile',
+      successRedirect: '/charts',
       failureRedirect: '/'
   }));
 
