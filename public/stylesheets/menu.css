@@ -1,0 +1,149 @@
+/*(48,75,128, 0.9);*/
+
+/* MENU */
+#menu-wrapper {
+	z-index: -1;
+	background-color: rgba(43,41,55, 0.9); 
+	position: fixed;
+	top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+}
+
+
+#menu-wrapper.menu-top{
+	z-index: 1000;
+}
+
+#menu{
+	text-align: center;
+	margin-top: 50px;
+	list-style-type: none;
+	font-size: 30px;
+	line-height: 70px;
+	font-weight: bold;
+	color: white;
+	padding: 0;
+	font-family: 'Lato';
+	transition: all 0.25s ease-in-out;
+}
+
+
+#menu li {
+	display: block;
+	width: 100%;
+}
+
+#menu a {
+	width: 100%;
+	display: block;
+}
+#menu a:visited, #menu a:link{
+	color: white;
+}
+
+#menu li:hover{
+	background-color: white;
+	color: #6196FF;
+}
+
+#menu a:hover {
+	color: #6196FF;
+	background-color: white;
+}
+
+.test-login {
+	margin-top: 50px;
+	font-size: 15px;
+}
+
+
+/* NAV BAR */
+#nav{
+	z-index: 2000;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 20px;
+}
+
+
+#hamburger-button {
+  width: 25px;
+  float: right;
+}
+
+#hamburger-button:hover {
+  cursor: pointer;
+}
+
+#hamburger-button > span {
+  display: block;
+  height: 2px;
+  width: 25px;
+  margin-bottom: 4px;
+  background-color: white;
+  transition: 0.1s ease-out margin, 0.2s ease-out opacity;
+}
+
+#hamburger-button > span.mouseover {
+  margin-bottom: 6px;
+}
+
+#hamburger-button > span.rotate1 {
+	margin-bottom: 0;
+	margin-top: 7px;
+	transform: rotate(45deg) translateY(3px);
+	transition: 0.25s ease-in-out transform;
+	transition-delay: 0.15s;
+}
+
+#hamburger-button > span.patty-hidden {
+	margin-bottom: 0;
+	opacity: 0;
+	transition: 0.15s ease-in-out opacity;
+	transition-delay: 0.15s;
+}
+
+#hamburger-button > span.rotate2 {
+	margin-bottom: 0;
+	
+	transform: rotate(-45deg) translateY(-3px);
+	transition: 0.25s ease-in-out transform;
+	transition-delay: 0.15s;
+}
+
+.logo{
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-size: 60px;
+	line-height: 45px;
+	-webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.logo-line-two{
+	line-height: 20px;
+	padding:0;
+	margin:0;
+	margin-top: 5px;
+	text-transform: uppercase;
+	font-size: 20px;
+	padding-left: 4px;
+	color: white;
+}
+.logo a:visited{
+	background-color: transparent;
+	color: white;
+}
+
+.logo a:hover{
+	background-color: transparent;
+	color:  yellow;
+}

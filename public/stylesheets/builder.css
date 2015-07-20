@@ -1,0 +1,157 @@
+/* ==========================================================================
+   FLOW CHART BUILDER PAGE
+   ========================================================================== */
+
+
+.builder-container{
+  background-color: #e2e8e9;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-top: 100px;
+}
+
+.header-build{
+	background-color: #E6E6E6;
+	height: 300px;
+	width: 100%;
+	text-align: center;
+	background-image: url(/images/07t2mb2.gif);
+	background-repeat: repeat-x;
+	margin-top: -120px;
+}
+
+.header-build h2{
+	position: relative;
+	top: 120px;
+	display: inline-block;;
+	margin: 0;
+	color: white;
+	background-color: rgba(97,150,255, 0.7);
+	padding: 10px;
+}
+
+.header-buttons{
+	position: relative;
+	bottom: 0;
+	right: 0;
+	display: inline-block;
+}
+
+.builder-main-container{
+	margin: 30px;
+	height: 100%;
+	background-color: #E2E8E8;
+}
+
+
+#main-image{
+	background-color: #E6E6E6;
+	height: 300px;
+	width: 100%;
+}
+
+
+.clear{
+	clear: both;
+}
+
+.options {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.container-canvas{
+
+	background-color: #E2E8E8;
+}
+
+#builder-canvas, .load-chart{
+  height: 1000px;
+  width: 1000px;
+  border: dashed 1px gray;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.load-chart{
+	border: none;
+}
+.editable1:hover {
+	background-color: #B2E6FF;
+}
+
+
+.editable2:hover {
+	background-color: #FFFF66;
+}
+
+
+.editable3:hover {
+	background-color: #FF6666;
+
+}
+
+.editable3:focus, .editable3{
+	outline: none;
+	
+}
+
+
+.prefs-buttons{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* ==========================================================================
+   BUILDING BLOCKS
+   ========================================================================== */
+
+.building-block{
+	box-sizing: border-box;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+
+.building-block:hover {
+	transform: scale(1.1)
+}
+
+
+.boxes {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 14px;
+	text-align: center;
+	display: inline-block;
+	background-color: white;
+	margin-right: 20px;
+}
+
+.question {
+	border: solid 2px #B3B3B3;
+	min-height: 100px;
+	width: 100px;
+
+}
+
+.answer {
+	width: 150px;
+	min-height: 100px;
+	background-color: #FFF93F;
+}
+
+
+.building-block-container {
+	padding-bottom: 30px;
+
+}
+
+.draggable-block{
+	margin:0;
+}

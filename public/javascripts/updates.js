@@ -11,8 +11,3 @@ var openEditBox = function(event){
 	$(this).parent().hide()
 }
 
-var updateProfile = function(event){
-
-
-}	
-

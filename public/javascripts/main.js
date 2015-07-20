@@ -102,6 +102,16 @@ window.addEventListener('load', function() {
 
     var chartHTML = $.parseHTML($('.db-html').text())
     $('.load-chart').append(chartHTML)
+
+    $('.chart-box').on('mouseover', function(){
+        $(this).children().css('color', '#333')
+    })
+
+     $('.chart-box').on('mouseout', function(){
+        $(this).children().css('color', 'white')
+    })
+
+
 }); // closing window load
 
 

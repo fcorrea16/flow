@@ -4,15 +4,19 @@
 	<% include ../views/partials/head %>
 </head>
 <body>
-	<% include ../views/partials/menu %>
-  <% include ../views/partials/nav %>
+	
+		<% include ../views/partials/menu %>
+	  <% include ../views/partials/nav %>
+	<div class="menu-bkg"></div>
   <div class="container">
-		<h2>Charts done with Flow</h2>
+		<h1 class="all-charts-text">All Charts</h1>
+		<div class="container-all-chart-boxes">
 			<% for (var i = 0; i < chart.length; i++) { %>
-				<div>
-					<h3><a href="chart/<%= chart[i].id %>"><%= chart[i].chart.title %></a></h3>
-				</div>
+				<a href="/charts/<%= chart[i].id %>"><div class="chart-box">
+					<h3><%= chart[i].chart.title %></h3>
+				</div></a>
 			<% } %>
+		</div>
 	</div>	
 </body>
 </html>

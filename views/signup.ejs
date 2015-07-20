@@ -9,7 +9,7 @@
 <body>
   <% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
-  <div class="container">
+  <div class="container container-login">
     <!-- show any messages that come back with authentication -->
     <% if (message.length > 0) { %>
       <div class="alert alert-danger"><%= message %></div>
@@ -19,9 +19,9 @@
       <form action="/signup" method="post">
         <input type="text" class="form-control" name="email" placeholder="Email">
         <input type="password" class="form-control" name="password" placeholder="Password">
-        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+        <button type="submit" class="btn">Sign up</button>
       </form>
-      <p>Already have an account? <a href="/login">Login</a></p>
+      <p style="margin-top:20px;">Already have an account? <a href="/login">Login</a></p>
   	</div>
   </div>
 </body>

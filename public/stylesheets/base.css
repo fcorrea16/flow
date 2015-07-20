@@ -3,9 +3,19 @@ body {
   padding: 0;
 }
 
-/* ==========================================================================
-   Hamburger
-   ========================================================================== */
+
+/* CONTAINER*/
+.container{
+  background-color: #e2e8e9;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-top: 100px;
+  height: 100%;
+}
 
 
 /* ==========================================================================
@@ -19,6 +29,7 @@ body {
   margin-right: 8px;
   text-decoration: none;
   font-size: 12px;
+  line-height: 12px;
   font-family: 'Unica One';
   color: #333;
   outline: none;

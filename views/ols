@@ -1,0 +1,62 @@
+
+<!--     	<div class="main-image-home">
+	      <div class="start-question-home">
+      		<img src="/images/flow-circle.svg">
+		      <h3 class="need-flow">Do you need a flow chart?</h3>
+			  </div>
+
+				<div class="yes-home">
+		      <svg height="50" width="100">
+		        <g>
+		          <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(26,230,140);stroke-width:3" />
+		          <rect x="35" y="15" width="30" height="20" style="fill:rgb(26,230,140)" />
+		          <text x="39" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+		        </g>
+		      </svg>
+	  	  </div> -->
+
+
+
+
+	  	  
+/*.main-image-home{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	margin-top: 100px;
+	height: 500px;
+}*/
+/*
+.start-question-home{
+	height: 210px;
+	width: 210px;
+	position: absolute;
+	top: 0;
+	left: 40%;
+	width: 100%;
+	height: 210px;
+}
+
+.need-flow{
+	position: absolute;
+	top: 35px;
+	left: 30px;
+	width: 145px;
+	font-family: 'Unica One';
+	font-size: 22pt;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+	margin-bottom:0;
+}
+
+.start-question-home img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.yes-home{
+
+}*/

@@ -55,13 +55,17 @@ module.exports = function(app, passport) {
 
 
    // -- CHART PAGES --
-  app.get('/chart/:id', function(req, res) {
-   Chart.findById(req.params.id, function(err, info) {
+  app.get('/charts/:id', function(req, res) {
+    // console.log(req.params.id)
+   Chart.find({_id: req.params.id}, function(err, info) {
+       console.log(info)
+       console.log(info[0].chart)
       return res.render('chart', {
-        title: info.chart.title,
-        html: info.chart.html,
-        user: info.chart.user_id
+        title: info[0].chart.title,
+        html: info[0].chart.html,
+        user: info[0].user_id
       });
+
     });
   });
 
@@ -85,12 +89,15 @@ module.exports = function(app, passport) {
     if(err) {/*error!!!*/}
       Chart.find({user_id: req.params.id} , function(err, db_charts) {
         console.log(db_user)
-        console.log(db_charts)
+        console.log(db_user.google )
+        console.log(db_user.local.name === undefined)
+        // console.log(db_charts)
+        
         if(err) {/*error!!!*/}
 
         return res.render('user', {
           user: db_user, 
-          charts: db_charts
+          charts: db_charts,
         })
 
       });
@@ -118,7 +125,7 @@ module.exports = function(app, passport) {
       user.save(function(err){
         if (err) throw err;
         console.log("user updated, finally")
-        res.redirect('/profile');
+        res.redirect('/users/' + id);
       });
 
     });
@@ -160,7 +167,7 @@ module.exports = function(app, passport) {
 
   // process the login form
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile', // redirect to the secure profile section
+    successRedirect: '/builder', // redirect to the secure profile section
     failureRedirect: '/login', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));

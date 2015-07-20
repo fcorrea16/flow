@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="866.859px" height="275.395px" viewBox="0 0 866.859 275.395" enable-background="new 0 0 866.859 275.395"
+	 xml:space="preserve">
+<g>
+	<rect x="651" y="88.394" fill="#FFF93F" width="199" height="100"/>
+	<rect x="16" y="90.394" fill="#FFF93F" width="199" height="100"/>
+	<circle fill="#ED1E79" cx="434.429" cy="137.697" r="98.262"/>
+	<text transform="matrix(1 0 0 1 418.6968 89.3767)" fill="#FFFFFF" font-family="'UnicaOne-Regular'" font-size="31">DO</text>
+	<text transform="matrix(1 0 0 1 377.6689 127.3767)" fill="#FFFFFF" font-family="'UnicaOne-Regular'" font-size="31">YOU NEED</text>
+	<text transform="matrix(1 0 0 1 392.7349 165.3767)" fill="#FFFFFF" font-family="'UnicaOne-Regular'" font-size="31">A FLOW</text>
+	<text transform="matrix(1 0 0 1 390.7358 203.3767)" fill="#FFFFFF" font-family="'UnicaOne-Regular'" font-size="31">CHART?</text>
+	<g>
+		<rect x="670.095" y="104.567" fill="none" width="161.668" height="66.926"/>
+		<text transform="matrix(1 0 0 1 679.2515 118.6267)" fill="#333333" font-family="'Museo-300'" font-size="20">You have come</text>
+		<text transform="matrix(1 0 0 1 699.8315 142.6267)" fill="#333333" font-family="'Museo-300'" font-size="20">to the right </text>
+		<text transform="matrix(1 0 0 1 723.5894 166.6267)" fill="#333333" font-family="'Museo-300'" font-size="20">place!</text>
+	</g>
+	
+		<line fill="none" stroke="#20FFA8" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="639" y1="139.394" x2="539" y2="139.394"/>
+	<rect x="562" y="123.394" fill="#20FFA8" width="54" height="28"/>
+	<rect x="572.566" y="131.942" fill="none" width="35.209" height="15.655"/>
+	<text transform="matrix(1 0 0 1 573.0132 144.1101)" fill="#333333" font-family="'PermanentMarker'" font-size="20.2281">YES</text>
+	
+		<line fill="none" stroke="#6196FF" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="329" y1="139.394" x2="229" y2="139.394"/>
+	<rect x="252" y="123.394" fill="#6196FF" width="54" height="28"/>
+	<rect x="262.566" y="131.942" fill="none" width="35.209" height="15.655"/>
+	<text transform="matrix(1 0 0 1 265.7202 144.1101)" fill="#333333" font-family="'PermanentMarker'" font-size="20.2281">NO</text>
+	<g>
+		<rect x="35.095" y="104.966" fill="none" width="161.668" height="70.13"/>
+		<text transform="matrix(1 0 0 1 65.2305 119.0251)" fill="#333333" font-family="'Museo-300'" font-size="20">Maybe you</text>
+		<text transform="matrix(1 0 0 1 85.0093 143.0251)" fill="#333333" font-family="'Museo-300'" font-size="20">should</text>
+		<text transform="matrix(1 0 0 1 61.0195 167.0251)" fill="#333333" font-family="'Museo-300'" font-size="20">reconsider...</text>
+	</g>
+</g>
+</svg>

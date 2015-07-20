@@ -2,29 +2,121 @@
 <html>
 <head>
 	<% include ../views/partials/head %>
+	<script src="/javascripts/updates.js"></script>
 </head>
 <body>
 	<% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
-	<h2> <% if (user.local.name != '') {%> 
-					<%= user.local.name %></h2>
-				<% } else { %>
-					<% if (user.google.name != '') { %>
-						<%= user.google.name %>
-					<% } %>
-			<% } %>
-	</h2>
-	<div class="container">
-	<h4><% if (user.google.fun_question != '')%> I love flow charts because it's <%= user.local.fun_question %></h4>
-	<h4> <%= user.local.location %></h4>
-	<img src="<% if (user.google.name != '')%><%= user.local.picture %>">
+  <div class="menu-bkg"></div>
+	
+	<div class="container container-users">
 
-	<% for (var i = 0; i < charts.length; i++) { %>
-			<div>
-				<h3><a href="/chart/<%= charts[i].id %>"><%= charts[i].chart.title %></a></h3>
+		<div class="main-content">
+			<h2 class="users-name"> 	
+
+				<% if (user.google.name != '' && user.local.name === '') { %>
+					<%= user.google.name %>
+				<% } %>
+
+				<% if (user.local.name === undefined ){ %> 
+					<a href="/profile">no username</a>
+				<% } %>
+
+				<% if (user.google.name === '' && user.local.name != '') { %>
+					<%= user.local.name %>
+				<% } %>
+
+				<% if ( user.local.name != '') { %>
+					<%= user.local.name %>
+				<% } %>
+			</h2>
+
+			<h3><% if (user.google.fun_question != '')%> Loves flow charts because <span style="text-decoration: underline;"><%= user.local.fun_question %></span></h3>
+
+			<h3> <% if (user.local.location != '')%> Lives in <%= user.local.location %></h3>
+
+			<!-- <img src="<% if (user.google.name != '')%><%= user.local.picture %>"> -->
+			<hr style="margin-top: 30px;">
+
+			<div class="container-all-chart-boxes">
+				<% if (charts.length === 0) { %>
+					<a href="/builder"><div class="chart-box">
+						<h3 style="color: white; padding-top: 15px">Create your first Flow Chart</h3>
+					</div></a>
+				<% } %>
+				<% for (var i = 0; i < charts.length; i++) { %>
+					<a href="/charts/<%= charts[i]._id %>"><div class="chart-box">
+						<h3 style="color: white"><%= charts[i].chart.title %></h3>
+					</div></a>
+				<% } %>
 			</div>
-	<% } %>
-</div>
+		</div>
+
+		<div class="sidebar">
+
+	    <div class="profile-box">
+	      <h3 >Main Account</h3>
+	      <% if (user.local.email) { %>
+
+		        <p><strong>Email</strong>: <%= user.local.email %></p>
+		        <% if (user.local.location != '') { %>
+		          <p><strong>Location</strong>: <%= user.local.location %></p>
+		        <% } %>
+
+		        <% if (user.local.fun_question != "") { %>
+		          <p><strong>Why do you love flow charts?<br></strong><%= user.local.fun_question %></p>
+		        <% } %>
+		        <br>
+
+		        <a href="#" class="btn btn-default btn-edit">Edit Profile</a>
+
+		        <a href="/unlink/local" class="btn btn-default">Unlink</a>
+		      
+	      <% } else { %>
+	          
+	          <a href="/connect/local" class="btn btn-default">Connect Local </a>
+	      
+	      <% } %>
+	    
+	    </div>
+
+	    <div class=" profile-box profile-box-edit hide">
+	      <h3 class="text-danger">Edit Main Account</h3>
+	        <form method="post" action="/profile/update">
+	          <input type="hidden" name="_method" value="put">
+	          <input type="text" placeholder="Location" name="location" value="<%= user.local.location%>" >
+	          <input type="text" placeholder="Name" name="name" value="<%= user.local.name%>">
+	          <!-- <input type="text" placeholder="Picture url" name="picture-url" value="<%= user.local['picture-url']%>"> -->
+	          <input type="text" placeholder="Why do you love flow charts?" name="fun-question" value="<%= user.local['fun_question']%>">
+	          <button type="submit" class="btn btn-update">Update</button>
+	        </form>   
+	    </div>
+
+
+	    <div class="profile-box">
+	      <h3 class="text-danger">Google</h3>
+	      <% if (user.google.token) { %>
+	        <p><strong>email</strong>: <%= user.google.email %></p>
+	        <p><strong>name</strong>: <%= user.google.name %></p>
+	        
+	        <br>
+	        <a href="#" class="btn btn-default">Edit</a>
+
+	        <a href="/unlink/google" class="btn btn-danger">Unlink</a>
+	      <% } else { %>
+	          <a href="/connect/google" class="btn btn-danger">Connect Google</a>
+	      <% } %>
+	    </div>
+
+	    <div class="profile-box">
+				<a href="/logout" class="btn ">Logout</a>
+	    </div>
+
+		</div>
+
+
+	</div>
 
 </body>
 </html>
+

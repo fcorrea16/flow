@@ -2,7 +2,7 @@
 
 <head>
   <% include ../views/partials/head %>
-
+  <link rel="stylesheet" href="/stylesheets/builder.css">
   <script src="/javascripts/sweetalert.min.js"></script> 
   <link rel="stylesheet" type="text/css" href="/stylesheets/sweetalert.css">
 
@@ -12,122 +12,125 @@
   <% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
 
-  <div class="header-build">
-      <h2> Build a Flow Chart</h2>
-  </div>
-  <div class="builder-main-container">
-    
-  <!-- This is where they can click to create new svg elements -->
-  <div class="building-block-container">
-
-    <h4>Building Blocks</h4>
-    <hr>
-    <div class="building-block start-question margin-right-10 f-left">
-      <text class="delete-block" style="position:relative; top:25px; right:-100px;font-family: 'Lato'; font-size:13px;">x</text>
-
-      <div>
-        <div style="position:absolute; text-align:center; height:120px; width:140px; margin-top: 45px; margin-left:30px;">
-        <h3 >Question 1</h3>
-        </div>
+    <div class="builder-container">
+      <div class="header-build">
+          <h2> Build a Flow Chart</h2>
       </div>
-      <svg height="200" width="200">
-        <circle cx="100" cy="100" r="100" fill="#ED1E79" />
-        <text x="70" y="40" fill="black" font-family="Lato" font-size="11px">START HERE</text>
-    </svg>
-    </div>
 
-
-    
-    <div class="test-yn" style="width: 250px; float: left">
-
-    <div class=" building-block hort-yes margin-right-10 f-left">
-      <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
-      <svg height="100" width="100">
-        <g>
-          <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
-          <rect x="30" y="40" width="40" height="20" style="fill:rgb(26,230,140)" />
-          <text x="38" y="55" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
-        </g>
-      </svg>
-    </div>
+      <div class="builder-main-container">
         
+        <!-- This is where they can click to create new svg elements -->
+        <div class="building-block-container">
 
-    <div class="building-block hort-no margin-right-10 f-left">
-      <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
-      <svg height="100" width="100">
-        <g>
-          <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
-          <rect x="30" y="40" width="40" height="20" style="fill:rgb(97,150,255)" />
-          <text x="40" y="55" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
-        </g>
-      </svg>
-    </div>
+          <h4>Building Blocks</h4>
+          <hr>
+          <div class="building-block start-question margin-right-10 f-left">
+            <text class="delete-block" style="position:relative; top:25px; right:-100px;font-family: 'Lato'; font-size:13px;">x</text>
 
-  
-
-    
-
-    <div class="building-block vert-no margin-right-10 f-left">
-      <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
-      <svg height="50" width="100" style="mergin:0; padding:0;">
-        <g>
-          <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(97,150,255);stroke-width:3" />
-          <rect x="35" y="15" width="30" height="20" style="fill:rgb(97,150,255)" />
-          <text x="40" y="29" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
-        </g>
-      </svg>
-    </div>
+            <div>
+              <div style="position:absolute; text-align:center; height:120px; width:140px; margin-top: 45px; margin-left:30px;">
+              <h3 >Question 1</h3>
+              </div>
+            </div>
+            <svg height="200" width="200">
+              <circle cx="100" cy="100" r="100" fill="#ED1E79" />
+              <text x="70" y="40" fill="black" font-family="Lato" font-size="11px">START HERE</text>
+            </svg>
+          </div>
 
 
-    <div class=" building-block vert-yes margin-right-10 f-left">
-      <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
-      <svg height="50" width="100">
-        <g>
-          <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(26,230,140);stroke-width:3" />
-          <rect x="35" y="15" width="30" height="20" style="fill:rgb(26,230,140)" />
-          <text x="39" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
-        </g>
-      </svg>
-    </div>
-  </div>
+          
+          <div class="test-yn" style="width: 250px; float: left">
 
-    <div class="building-block question boxes margin-right-10 f-left">
-      <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
-      <p>Question box</p>
+            <div class=" building-block hort-yes margin-right-10 f-left">
+              <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
+              <svg height="100" width="100">
+                <g>
+                  <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(26,230,140);stroke-width:3" />
+                  <rect x="30" y="40" width="40" height="20" style="fill:rgb(26,230,140)" />
+                  <text x="38" y="55" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+                </g>
+              </svg>
+            </div>
+                
+
+            <div class="building-block hort-no margin-right-10 f-left">
+              <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
+              <svg height="100" width="100">
+                <g>
+                  <line x1="10" y1="50" x2="90" y2="50" style="stroke:rgb(97,150,255);stroke-width:3" />
+                  <rect x="30" y="40" width="40" height="20" style="fill:rgb(97,150,255)" />
+                  <text x="40" y="55" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+                </g>
+              </svg>
+            </div>
+
+          
+
+            <div class="building-block vert-no margin-right-10 f-left">
+              <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
+              <svg height="50" width="100" style="mergin:0; padding:0;">
+                <g>
+                  <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(97,150,255);stroke-width:3" />
+                  <rect x="35" y="15" width="30" height="20" style="fill:rgb(97,150,255)" />
+                  <text x="40" y="29" fill="white" font-family="Permanent Marker" font-size="13px">NO</text>
+                </g>
+              </svg>
+            </div>
+
+
+            <div class=" building-block vert-yes margin-right-10 f-left">
+              <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
+              <svg height="50" width="100">
+                <g>
+                  <line x1="50" y1="5" x2="50" y2="45" style="stroke:rgb(26,230,140);stroke-width:3" />
+                  <rect x="35" y="15" width="30" height="20" style="fill:rgb(26,230,140)" />
+                  <text x="39" y="29" fill="white" font-family="Permanent Marker" font-size="13px">YES</text>
+                </g>
+              </svg>
+            </div>
+        
+          </div>
+
+            <div class="building-block question boxes margin-right-10 f-left">
+              <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
+              <p>Question box</p>
+            </div>
+           
+           <div class="building-block answer boxes margin-right-10 f-left">
+             <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
+              <h4>This is the answer box</h4>
+            </div>
+
+            <br class="clear-both">
+
+        </div>
+
+
+
+        <!-- this is the draggable area where items will append to  -->
+        
+        <div class="builder-prefs">
+          <h4>Preferences</h4>
+          <hr>
+          <div class="prefs-buttons">
+            <button class="btn save">Save</button>
+            <button class="btn clear-container">Empty</button>
+            <button class="btn">View Your Charts</button>
+          </div>
+          <div class="clear-both"></div>
+          <h2 class="title chart-title" contenteditable="true" style="height=100px;"> Chart Title</h2>
+        </div>
+
+
+        <div class="container-canvas">
+          <div id="builder-canvas"></div>
+        </div>
+
+      </div>
+
     </div>
    
-   <div class="building-block answer boxes margin-right-10 f-left">
-     <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
-      <h4>This is the answer box</h4>
-    </div>
-
-
-
-    <br class="clear-both">
-
-  </div>
-
-
-
-  <!-- this is the draggable area where items will append to  -->
-  
-  <div class="builder-prefs">
-    <h4>Preferences</h4>
-    <hr>
-    <div class="prefs-buttons">
-      <button class="btn save">Save</button>
-      <button class="btn clear-container">Empty</button>
-      <button class="btn">View Your Charts</button>
-    </div>
-    <div class="clear-both"></div>
-    <h2 class="title chart-title" contenteditable="true" style="height=100px;"> Chart Title</h2>
-  </div>
-
-  <div class="container-canvas">
-    <div id="builder-canvas" >
-    </div>
-  </div>
-</div>
 </body>
-
 </html>
+

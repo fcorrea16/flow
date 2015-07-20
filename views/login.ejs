@@ -7,7 +7,7 @@
   <% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
 
-  <div class="container">
+  <div class="container container-login">
     <!-- show any messages that come back with authentication -->
     <% if (message.length > 0) { %>
         <div class="alert alert-danger"><%= message %></div>
@@ -20,7 +20,7 @@
         <button type="submit" class="btn btn-warning btn-lg">Login</button>
       </form>
       <br>
-      <p>Need an account? <a href="/signup">Signup</a></p>
+      <p >Need an account? <a href="/signup">Sign up</a></p>
     </div>
   </div>
 </body>

@@ -28,7 +28,7 @@ var animatePatties = function(){
 var showMenu = function(){
   $(this).parents().find($('#menu-wrapper')).toggleClass('menu-top');
   if ($('#menu').css('margin-top') === '50px') {
-    $('#menu').css('margin-top', '110px');
+    $('#menu').css('margin-top', '150px');
     $('#menu').css('opacity', '1')
   } else {
     $('#menu').css('margin-top', '50px')

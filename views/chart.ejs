@@ -2,6 +2,7 @@
 <html>
 <head>
 	<% include ../views/partials/head %>
+	<link rel="stylesheet" href="/stylesheets/builder.css">
 
 </head>
 <body>
@@ -9,11 +10,12 @@
   <% include ../views/partials/nav %>
   <div class="container">
 		<div class="header-build">
-	      <h1><%= title %></h1>
+	      <h2><%= title %></h2>
+	      <p class="btn header-buttons"><a href="/users/<%= user %>"></a>Creator </p>
+				<button class="edit-chart btn header-buttons">Edit Chart</button>
 	  </div>
 
-		<p>Done by <%= user %></p>
-		<button class="edit-chart">Edit</button>
+		
 
 		<div class="container-canvas">
 			<!-- parsed html that is appended to dom -->
