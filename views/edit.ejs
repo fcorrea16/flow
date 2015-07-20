@@ -3,6 +3,7 @@
 <head>
   <% include ../views/partials/head %>
   <link rel="stylesheet" href="/stylesheets/builder.css">
+  <script src="/javascripts/updates.js"></script> 
   <script src="/javascripts/sweetalert.min.js"></script> 
   <link rel="stylesheet" type="text/css" href="/stylesheets/sweetalert.css">
 
@@ -14,7 +15,7 @@
 
     <div class="builder-container">
       <div class="header-build">
-          <h2>Build a Flow Chart</h2>
+          <h2> Edit Your Flow Chart</h2>
       </div>
 
       <div class="builder-main-container">
@@ -114,19 +115,19 @@
           <h4>Preferences</h4>
           <hr>
           <div class="prefs-buttons">
-            <button class="btn save">Save</button>
+            <button class="btn save-edit">Save</button>
             <button class="btn clear-container">Empty</button>
             <button class="btn">View Your Charts</button>
           </div>
           <div class="clear-both"></div>
-          <h2 class="title chart-title" contenteditable="true" style="height=100px;"> Chart Title</h2>
+          <h2 class="title chart-title" contenteditable="true" style="height=100px;"> <%= title %></h2>
         </div>
 
 
         <div class="container-canvas">
           <div id="builder-canvas"></div>
         </div>
-
+        <div class="db-html-edit hide"><%= html %></div>
       </div>
 
     </div>

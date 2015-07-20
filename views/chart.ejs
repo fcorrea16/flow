@@ -3,6 +3,7 @@
 <head>
 	<% include ../views/partials/head %>
 	<link rel="stylesheet" href="/stylesheets/builder.css">
+	<script src="/javascripts/updates.js"></script>
 
 </head>
 <body>
@@ -11,10 +12,18 @@
   <div class="container">
 		<div class="header-build">
 	      <h2><%= title %></h2>
-	      <p class="btn header-buttons"><a href="/users/<%= user %>"></a>Creator </p>
-				<button class="edit-chart btn header-buttons">Edit Chart</button>
-	  </div>
+	      <div class="header-info">
+		      <a href="/users/<%= user%>"><p class="btn header-buttons">Creator </p></a>
+		      <% if (login) { %>
+						<a href="/builder/<%= chart_id%>"><button class="edit-chart btn header-buttons">Edit Chart</button></a>
+						<form method="post" action="/charts/<%=chart_id%>/delete" class="inline-block">
+<!-- 							<input type="hidden" name="_method" value="put">
+ -->							<button class="btn header-buttons">Delete</button></a>
+						</form> 
+					<% } %>
 
+				</div>
+	  </div>	          
 		
 
 		<div class="container-canvas">

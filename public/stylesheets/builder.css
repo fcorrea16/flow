@@ -34,10 +34,13 @@
 }
 
 .header-buttons{
-	position: relative;
-	bottom: 0;
-	right: 0;
 	display: inline-block;
+}
+.header-info{
+	position: absolute;
+	top: 230px;
+	left: 30px;
+
 }
 
 .builder-main-container{
@@ -64,7 +67,7 @@
 }
 
 .container-canvas{
-
+	margin-top: 30px;
 	background-color: #E2E8E8;
 }
 

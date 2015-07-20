@@ -30,6 +30,16 @@ module.exports = function(app, passport) {
 
   });
 
+  app.get('/builder/:id', isLoggedIn, function(req, res) {
+    Chart.find({_id: req.params.id}, function(err, info) {
+      return res.render('edit', {
+        title: info[0].chart.title,
+        html: info[0].chart.html,
+        user: info[0].user_id[0]
+      });
+    });
+  });
+
   app.post('/savechart', function(req, res) {
     // console.log(req.body.title)
     // console.log(req.body.content)
@@ -53,17 +63,36 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.post('/savechart/:id', function(req, res) {
+    // console.log(req.body.title)
+    // console.log(req.body.content)
+    var title = req.body.title;
+    var content = req.body.content;
+    var currentUser = req.user._id
+    
+    Chart.findOneAndUpdate({_id: req.params.id}, {
+      "$set": { "chart":  { "title":  title, "html": content}}},
+       function(err, doc){
+        if (err) 
+          throw err;
+          console.log("there was an error")
+    });
+  });
+
 
    // -- CHART PAGES --
   app.get('/charts/:id', function(req, res) {
     // console.log(req.params.id)
    Chart.find({_id: req.params.id}, function(err, info) {
-       console.log(info)
-       console.log(info[0].chart)
+      // console.log(info[0]._id)
+      // console.log(req.user)
+      // console.log(info[0].user_id[0])
+      // console.log(info[0].chart)
       return res.render('chart', {
         title: info[0].chart.title,
         html: info[0].chart.html,
-        user: info[0].user_id
+        user: info[0].user_id,
+        chart_id: info[0]._id
       });
 
     });
@@ -77,6 +106,20 @@ module.exports = function(app, passport) {
       chart: chart, 
       id: ObjectId
       });
+    });
+  });
+
+  app.post('/charts/:id/delete', function(req, res){
+    console.log(req.params.id); 
+    // res.send('got a delete request')
+    Chart.findByIdAndRemove(req.params.id, function(err, chart){
+      if (err) {
+        throw err;
+        console.log("there was an error")
+      } else {
+        res.redirect('/charts');
+        console.log("no errors")
+      }
     });
   });
 

@@ -11,7 +11,11 @@
 	
 	<div class="container container-users">
 
+	<% if (login) { %>
 		<div class="main-content">
+	<% } else { %>
+		<div class="main-content" style="width:100%">
+	<% } %>
 			<h2 class="users-name"> 	
 
 				<% if (user.google.name != '' && user.local.name === '') { %>
@@ -51,7 +55,7 @@
 				<% } %>
 			</div>
 		</div>
-
+	<% if (login) { %>
 		<div class="sidebar">
 
 	    <div class="profile-box">
@@ -113,7 +117,7 @@
 	    </div>
 
 		</div>
-
+		<% } %>
 
 	</div>
 

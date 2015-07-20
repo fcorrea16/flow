@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 	$(document).on("scroll", function(e){
 		var scrolled = $(window).scrollTop();
 		
-		console.log("scrolled" + scrolled + "pixels")
+		// console.log("scrolled" + scrolled + "pixels")
 
 		if (scrolled > 250) {
 			$('.main-image-home img').css('margin-top', '-50px').css('opacity', 0)

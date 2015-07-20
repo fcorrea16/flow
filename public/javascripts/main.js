@@ -14,11 +14,10 @@ window.addEventListener('load', function() {
 
     // creating building blocks on builder canvas as they click on buttons
     $('.building-block').on('click', function(event) {
-        var $newBlock = $(this).clone().addClass('.draggable-block').draggable({
+        var $newBlock = $(this).clone().addClass('draggable-block').draggable({
             containment: "#builder-canvas",
             scroll: false,
-            snap: true,
-            grid: [50, 50]
+            snap: true
         }).appendTo('#builder-canvas').removeClass('building-block').removeClass('margin-right-10');
 
         $newBlock.find('p').attr('contenteditable', 'true').addClass('editable1')
@@ -78,6 +77,32 @@ window.addEventListener('load', function() {
         })
        
     })
+
+    $('.save-edit').on('click', function(event) {
+        // what we'll send to the server.
+        $('.delete-block').remove();
+        $('#builder-canvas').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
+        $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
+        $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+        var chart_id = window.location.pathname.split('/')[2];
+        var $title = $('.chart-title').text()
+        var $flowHthml = $('#builder-canvas').html()
+        // var chartInfo = {"_id" : ObjectId(chart_id), "chart": { title: $title, content: $flowHthml };
+        var chartInfo = { title: $title, content: $flowHthml };
+
+        $.post( '/savechart/'+chart_id, chartInfo , function(data) {
+        });
+
+        swal("Chart Saved")
+        $('.confirm').on('click', function(event){
+            window.location.href = "/charts"
+        })
+       
+    })
+
+
+
+
 
     // delete blocks from DOM
     $('#builder-canvas').on('click', '.delete-block', function(event) {
