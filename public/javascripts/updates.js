@@ -4,25 +4,12 @@ $(window).on('load', function(){
 	// $('.db-html-edit').on('load', appendToBuilder)
 
 	$('.btn-copy-code').on('click', copyToClipboard);
+	
 
-	// var appendToBuilder = function(event) {
-	var chartHTML = $.parseHTML($('.db-html-edit').text())
-	// console.log("appending.....")
-	$('#builder-canvas').append(chartHTML)
-	$('#builder-canvas').children().addClass('draggable-block ui-draggable ui-draggable-handle').draggable({
-            containment: "#builder-canvas",
-            scroll: false,
-            snap: true
-          })
-	$('.boxes').children().attr('contenteditable', 'true').addClass('editable2').addClass('editable1')
-	$('.container-canvas').find('h3').attr('contenteditable', 'true').addClass('editable3')
-
-	// $("#link").click(function(){
-	//   var holdtext = $("#clipboard").innerText;
-	//   Copied = holdtext.createTextRange();
-	//   Copied.execCommand("Copy");
-	// });
-
+	$('.load-chart').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
+  $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
+  $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+  
 })
 
 var openEditBox = function(event){
