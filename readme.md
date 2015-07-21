@@ -21,7 +21,7 @@ Pass: test
 3. You can see all charts created on the View All Charts link.
 
 ----
-## Technologies used
+## technologies used
 * node
 * bcrypt-nodejs 
 * ejs
@@ -41,11 +41,11 @@ Pass: test
 
 
 ----
-## Trello
+## trello
 I managed my time and work with Trello. Check out [my Board](https://trello.com/b/l1H6kpvA/fernanda-correa-flow-chart). You can find my ERD, Wireframe, Mockup there. 
 
 ----
-## App
+## app
 [App](http://flowchartbuilder.herokuapp.com/)
 
 ----
