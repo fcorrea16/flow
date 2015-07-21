@@ -54,10 +54,12 @@ Pass: test
 
 
 ----
-## I managed my time and work with Trello
-Check out [my Board](https://trello.com/b/l1H6kpvA/fernanda-correa-flow-chart)
- 
-You can find my ERD, Wireframe, Mockup there. 
+## Trello
+I managed my time and work with Trello. Check out [my Board](https://trello.com/b/l1H6kpvA/fernanda-correa-flow-chart). You can find my ERD, Wireframe, Mockup there. 
+
+----
+## App
+[App](http://flowchartbuilder.herokuapp.com/)
 
 ----
 ## thanks
