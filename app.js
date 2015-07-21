@@ -15,6 +15,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var methodOverride = require('method-override')
 
 // heroku:
 var cool = require('cool-ascii-faces');
@@ -30,6 +31,8 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
+
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static('public'));
@@ -44,8 +47,8 @@ app.use(session({
 
 
 // method override
-var methodOverride = require('method-override')
-app.use(methodOverride('_method'))
+
+
 
 // app.use(session({ secret: 'hellosecret' }));
 

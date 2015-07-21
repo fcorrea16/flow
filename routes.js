@@ -2,9 +2,6 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User')
 var Chart = mongoose.model('Chart')
 var ObjectId = mongoose.Types.ObjectId
-var cool = require('cool-ascii-faces');
-
-
 
 module.exports = function(app, passport) {
 
@@ -64,8 +61,7 @@ module.exports = function(app, passport) {
   });
 
   app.post('/savechart/:id', function(req, res) {
-    // console.log(req.body.title)
-    // console.log(req.body.content)
+    console.log("yo i found you")
     var title = req.body.title;
     var content = req.body.content;
     var currentUser = req.user._id
@@ -82,12 +78,7 @@ module.exports = function(app, passport) {
 
    // -- CHART PAGES --
   app.get('/charts/:id', function(req, res) {
-    // console.log(req.params.id)
    Chart.find({_id: req.params.id}, function(err, info) {
-      // console.log(info[0]._id)
-      // console.log(req.user)
-      // console.log(info[0].user_id[0])
-      // console.log(info[0].chart)
       return res.render('chart', {
         title: info[0].chart.title,
         html: info[0].chart.html,
@@ -109,20 +100,22 @@ module.exports = function(app, passport) {
     });
   });
 
-  app.delete('/charts/:id/delete', function(req, res){
-    console.log(req.params.id); 
-    // res.send('got a delete request')
-    Chart.findByIdAndRemove(req.params.id, function(err, chart){
-      if (err) {
-        throw err;
-        console.log("there was an error")
-      } else {
-        res.redirect('/charts');
-        console.log("no errors")
-      }
-    });
-  });
 
+app.delete( '/charts/:id/delete', function( request, response ) {
+  
+    Chart.findById( request.params.id, function( err, chart ) {
+        return chart.remove( function( err ) {
+            if( !err ) {
+                console.log( 'Chart removed' );
+                // return response.send( '' );
+                response.redirect('/charts');
+            } else {
+                console.log( err );
+                return response.send('ERROR');
+            }
+        });
+    });
+});
 
 
   // -- USER SECTION --
@@ -155,6 +148,8 @@ module.exports = function(app, passport) {
     });
   });
 
+
+
   app.post('/profile/update', isLoggedIn, function(req, res) {
     var id = req.user._id
 
@@ -186,8 +181,6 @@ module.exports = function(app, passport) {
       res.redirect('/profile');
     });
   });
-
-
 
 
 
@@ -307,19 +300,6 @@ module.exports = function(app, passport) {
 
 }; // closes module exports
 
-function currentUserId (req, res){
-
-// console.log(req.session.passport.user)
-//     if (req.session.passport.user === undefined) {
-//       var id = 0;
-
-//     } else{
-//       var id = req.session.passport.user
-//     }
-//     res.render('index', {
-//       user_id: id
-//     })
-}
 
 // to make sure a user is logged in
 function isLoggedIn(req, res, next) {
