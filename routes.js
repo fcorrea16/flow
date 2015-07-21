@@ -38,8 +38,6 @@ module.exports = function(app, passport) {
   });
 
   app.post('/savechart', function(req, res) {
-    // console.log(req.body.title)
-    // console.log(req.body.content)
     var title = req.body.title;
     var content = req.body.content;
     var currentUser = req.user._id

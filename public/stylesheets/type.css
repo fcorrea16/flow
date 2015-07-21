@@ -84,6 +84,7 @@ a {
 a:hover{
 	font-weight: bold;
 	color: #303030;
+	cursor: pointer;
 }
 
 a:visited {

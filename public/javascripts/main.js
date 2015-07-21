@@ -102,9 +102,6 @@ window.addEventListener('load', function() {
     })
 
 
-
-
-
     // delete blocks from DOM
     $('#builder-canvas').on('click', '.delete-block', function(event) {
         $(this).parent().remove()

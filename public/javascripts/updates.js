@@ -1,11 +1,7 @@
 $(window).on('load', function(){
 
 	$('.btn-edit').on('click', openEditBox);
-	// $('.db-html-edit').on('load', appendToBuilder)
-
 	$('.btn-copy-code').on('click', copyToClipboard);
-	
-
 	$('.load-chart').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
   $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
   $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
@@ -21,8 +17,6 @@ var openEditBox = function(event){
 var copyToClipboard = function(){
 	var htmlTextCopy = ($('.db-html')).text();
 	console.log(htmlTextCopy)
-// htmlTextCopy.select();
-// document.execCommand('copy')
 
 }
 

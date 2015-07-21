@@ -13,6 +13,3 @@ var chartSchema = mongoose.Schema({
 module.exports = mongoose.model('Chart', chartSchema);
 
 
-
-
-// user_id: String

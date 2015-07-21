@@ -21,10 +21,6 @@ module.exports = function(passport) {
     });
 
 
-
-
-
-
     // -- LOCAL SIGNUP --
     // we are using named strategies since we have one for login and one for signup. By default, if there was no name, it would just be called 'local'
 
@@ -101,10 +97,6 @@ module.exports = function(passport) {
       });
 
     }));
-
-
-
-
 
 
       // -- LOCAL LOGIN --

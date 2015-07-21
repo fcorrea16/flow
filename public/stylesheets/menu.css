@@ -47,11 +47,13 @@
 #menu li:hover{
 	background-color: white;
 	color: #6196FF;
+	cursor: pointer;
 }
 
 #menu a:hover {
 	color: #6196FF;
 	background-color: white;
+	cursor: pointer;
 }
 
 .test-login {
@@ -79,6 +81,7 @@
 }
 
 #hamburger-button:hover {
+  cursor: pointer;
   cursor: pointer;
 }
 
@@ -146,4 +149,5 @@
 .logo a:hover{
 	background-color: transparent;
 	color:  yellow;
+	cursor: pointer;
 }

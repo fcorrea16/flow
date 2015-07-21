@@ -31,7 +31,8 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride('_method'))
+
+app.use(methodOverride('_method')); // method override
 
 
 app.set('view engine', 'ejs'); // set up ejs for templating
@@ -44,10 +45,6 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 })); 
-
-
-// method override
-
 
 
 // app.use(session({ secret: 'hellosecret' }));

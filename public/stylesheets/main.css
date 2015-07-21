@@ -61,7 +61,7 @@
 
 .chart-box:hover{
 	background-image: url(/images/flow-circle-yellow.svg);
-	
+	cursor: pointer;
 }
 
 

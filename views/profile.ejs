@@ -22,14 +22,12 @@
         <% } %>
         <% if (user.local.fun_question != "") { %>
           <p><strong>Why do you love flow charts?<br></strong><%= user.local.fun_question %></p>
-        <% } %>
-        <br>
+      <% } %>
+      <br>
 
+      <a href="#" class="btn btn-default btn-edit">Edit</a>
 
-
-        <a href="#" class="btn btn-default btn-edit">Edit</a>
-
-        <a href="/unlink/local" class="btn btn-default">Unlink</a>
+      <a href="/unlink/local" class="btn btn-default">Unlink</a>
       
       <% } else { %>
           <a href="/connect/local" class="btn btn-default">Connect Local</a>
@@ -66,9 +64,6 @@
     </div>
 
     <div class="clear-both"></div>
-
- 
-
 
   </div>
 </body>
