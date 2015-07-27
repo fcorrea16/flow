@@ -19,12 +19,18 @@
 
     <div class="middle-container">
     	<h2 style="margin-top: 15px;">How to build a flow chart ?</h2>
+      
+      <br>
       <img src="/images/home-image2.svg">
     </div>
 
     <div class="bottom-container">
     	<h3>Got it?<h3>
-    	<h2><a href="/login">Start Now &rarr;</a></h2>
+      <% if (login) { %>
+      	<h2><a href="/builder">Start Now &rarr;</a></h2>
+      <% } else { %>
+        <h2><a href="/login">Start Now &rarr;</a></h2>
+      <% } %>
     </div> 
 
   </div>

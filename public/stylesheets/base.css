@@ -24,22 +24,24 @@ body {
 
 .btn { 
   background-color: #FFF93F;
-  border: solid 1px #FFF93F;
-  padding:5px;
+  border: solid 2px #FFF93F;
+  padding: 8px;
   margin-right: 8px;
   text-decoration: none;
   font-size: 14px;
   line-height: 14px;
-  font-family: 'Unica One';
+  font-family: 'Lato';
   color: #333;
   outline: none;
 }
 
 
-
+/*#FFCC00*/
 .btn:hover {
-  background-color: #FFCC00;
+  background-color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
+  border: solid 2px #FFF93F;
+
 }
 .question-update, .question-update-cancel{
   font-family:'Lato';
@@ -71,6 +73,22 @@ body {
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+
+.logout {
+  background-color: rgb(237, 30, 121);
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.logout:hover {
+  background-color: #8E1249;
+  font-weight: bold;
+  color: white;
+  border: none;
 }
 
 

@@ -1,4 +1,3 @@
-/*rgba(97,150,255, 0.9)*/
 
 
 /* ==========================================================================
@@ -66,18 +65,23 @@
 
 
 
-
-/*green rgb(26,230,140);*/
-
-
 /* ==========================================================================
    login, signup 
    ========================================================================== */
 
 
 .container-login{
-	background-image: url(/images/pattern-shapes3.jpg);
 	background-repeat: repeat;
+  background: -moz-linear-gradient(top,  rgba(39,172,196,1) 0%, rgba(125,185,232,0) 80%), url(/images/triangular_@2X.png);; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(39,172,196,1)), color-stop(80%,rgba(125,185,232,0))), url(/images/triangular_@2X.png);; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(39,172,196,1) 0%,rgba(125,185,232,0) 80%), url(/images/triangular_@2X.png);; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(39,172,196,1) 0%,rgba(125,185,232,0) 80%), url(/images/triangular_@2X.png);; /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(39,172,196,1) 0%,rgba(125,185,232,0) 80%), url(/images/triangular_@2X.png);; /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(39,172,196,1) 0%,rgba(125,185,232,0) 80%), url(/images/triangular_@2X.png);; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#27acc4', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+  height: 100%;
+  width: 100%;
+ 
 }
 
 
@@ -87,6 +91,7 @@
 
 .container-users{
 	text-align: center;
+	
 }
 
 .container-users h3{
@@ -131,6 +136,7 @@
 .profile-box:last-child{
 	border-bottom: 0px solid white;
 	padding: 15px;
+	margin-top: 10px;
 }
 
 

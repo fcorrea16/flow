@@ -9,7 +9,7 @@
     @media print
     {
     	.non-printable { display: none; }
-    	.printable { display: block; margin:0;padding: 0;}
+    	.printable { display: block; margin:0;padding: 0; }
     }
   </style>
 
@@ -18,36 +18,42 @@
 
 	<% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
-
-  <div class="container">
-		<div class="header-build">
-	      <h2 class="printable"><%= title %></h2>
-	      <div class="header-info non-printable">
+  <div class="menu-bkg"></div>
+  <div class="container chart-page-main-container">
+		<!-- <div class="header-builder-page"> -->
+	      <div class="buttons-chart-page non-printable">
 		      <a href="/users/<%= user%>"><p class="btn header-buttons">Creator </p></a>
 		      <a href="javascript:window.print()"><p class="btn btn-print header-buttons">Print </p></a>
-		      <button class="btn btn-copy-code">Copy Code</button>
+		      <!-- <a><button class="btn header-buttons">Copy Code</button></a> -->
 
 		      <% if (login) { %>
 						<a href="/builder/<%= chart_id%>"><button class="edit-chart btn header-buttons">Edit Chart</button></a>
 					
 						<form method="post" action="/charts/<%=chart_id%>/delete?_method=DELETE" class="inline-block">
 							<input type="hidden" name="_method" value="delete">
-							<button  class="btn header-buttons">Delete</button></a>
+							<a><button  class="btn header-buttons">Delete</button></a>
 						</form> 
 					<% } %>
 
 				</div>
-	  </div>	          
+
+	      
+	      
+	  <!-- </div> -->	          
 
 
-		<div class="container-canvas printable">
-			<!-- parsed html that is appended to dom -->
-			<div class="load-chart"></div>
-			<!-- <div class="html-text-copy non-printable"> <textarea style="font-size:12px; margin-left:auto; marin-right:auto; width: 1000px; height:50px;"><%= html %></textarea>
-			</div> -->
+		<div id="container-content" class="printable chart-page-main-container">
+
+			<div class="chart-container-chart-page ">
+				<h2 class="printable title-chart-page"><%= title %></h2>
+				<!-- parsed html that is appended to dom -->
+				<div class="load-chart"></div>
+			</div>
 		</div>
+
 		<!-- html that is plain text -->
 		<div class="db-html hide non-printable"><%= html %></div>
+
 	</div>
 </body>
 </html>

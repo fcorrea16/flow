@@ -1,10 +1,15 @@
 $(window).on('load', function(){
 
 	$('.btn-edit').on('click', openEditBox);
+	
 	$('.btn-copy-code').on('click', copyToClipboard);
+
 	$('.load-chart').children().removeClass('.draggable-block ui-draggable ui-draggable-handle');
-  $('.boxes').children().attr('contenteditable', 'false').removeClass('editable2').removeClass('editable1')
-  $('.container-canvas').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+
+  $('.load-chart').find('p').attr('contenteditable', 'false').removeClass('editable1')
+  $('.load-chart').find('h4').attr('contenteditable', 'false').removeClass('editable2')
+  $('.load-chart').find('h3').attr('contenteditable', 'false').removeClass('editable3')
+
   
 })
 

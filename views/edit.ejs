@@ -13,8 +13,8 @@
   <% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
 
-    <div class="builder-container">
-      <div class="header-build">
+    <div class="builder-page-container">
+      <div class="header-builder-page">
           <h2> Edit Your Flow Chart</h2>
       </div>
 
@@ -25,7 +25,7 @@
 
           <h4>Building Blocks</h4>
           <hr>
-          <div class="building-block start-question margin-right-10 f-left">
+          <div class="building-block start-question margin-right-10 f-left draggable">
             <text class="delete-block" style="position:relative; top:25px; right:-100px;font-family: 'Lato'; font-size:13px;">x</text>
 
             <div>
@@ -43,7 +43,7 @@
           
           <div class="test-yn" style="width: 250px; float: left">
 
-            <div class=" building-block hort-yes margin-right-10 f-left">
+            <div class=" building-block draggable hort-yes margin-right-10 f-left">
               <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
               <svg height="100" width="100">
                 <g>
@@ -55,7 +55,7 @@
             </div>
                 
 
-            <div class="building-block hort-no margin-right-10 f-left">
+            <div class="building-block draggable hort-no margin-right-10 f-left">
               <text class="delete-block" style="position: relative; top:-60px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
               <svg height="100" width="100">
                 <g>
@@ -68,7 +68,7 @@
 
           
 
-            <div class="building-block vert-no margin-right-10 f-left">
+            <div class="building-block draggable vert-no margin-right-10 f-left">
               <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
               <svg height="50" width="100" style="mergin:0; padding:0;">
                 <g>
@@ -80,7 +80,7 @@
             </div>
 
 
-            <div class=" building-block vert-yes margin-right-10 f-left">
+            <div class=" building-block draggable vert-yes margin-right-10 f-left">
               <text class="delete-block" style="position: relative; top:-40px; right: -85px; font-family: 'Lato'; font-size:13px;">x</text>
               <svg height="50" width="100">
                 <g>
@@ -93,12 +93,12 @@
         
           </div>
 
-            <div class="building-block question boxes margin-right-10 f-left">
+            <div class="building-block draggable question boxes margin-right-10 f-left">
               <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
               <p>Question box</p>
             </div>
            
-            <div class="building-block answer boxes margin-right-10 f-left">
+            <div class="building-block draggable answer boxes margin-right-10 f-left">
              <text class="delete-block" style="position:relative; top:-12px; right:-8px; float: right;font-family: 'Lato'; font-size:13px;">x</text>
               <h4>This is the answer box</h4>
             </div>
@@ -110,27 +110,25 @@
 
 
         <!-- this is the draggable area where items will append to  -->
-        
-        <div class="builder-prefs">
-          <h4>Preferences</h4>
-          <hr>
-          <div class="prefs-buttons">
-            <button class="btn save-edit">Save</button>
-            <button class="btn clear-container">Empty</button>
-            <button class="btn">View Your Charts</button>
-          </div>
-          <div class="clear-both"></div>
-          <h2 class="title chart-title" contenteditable="true" style="height=100px;"> <%= title %></h2>
-        </div>
+        <div id="container-canvas">
+          <div class="builder-prefs">
+            <h4>BUILDING CANVAS</h4>
+            <hr>
+            <h2 class="title chart-title" contenteditable="true" style="height=100px;"> <%= title %></h2>
+            <div class="prefs-buttons">
+              <button class="btn save-edit">Save</button>
+              <button class="btn clear-container">Empty</button>
+            </div>
+            <div class="clear-both"></div>
+          </div>  
 
+          <div id="builder-canvas" class="droppable"></div>
 
-        <div class="container-canvas">
-          <div id="builder-canvas"></div>
+          <div class="db-html-edit hide"><%= html %></div>
         </div>
-        <div class="db-html-edit hide"><%= html %></div>
-      </div>
 
     </div>
+  </div>  
    
 </body>
 </html>
