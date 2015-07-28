@@ -23,7 +23,7 @@
 				<% } %>
 
 				<% if (user.local.name === undefined ){ %> 
-					<a href="/profile">no username</a>
+					no username
 				<% } %>
 
 				<% if (user.google.name === '' && user.local.name != '') { %>
@@ -98,7 +98,7 @@
 
 
 	    <div class="profile-box">
-	      <h3 class="text-danger">Google</h3>
+	      <h3 style="margin-bottom: 30px;">Google</h3>
 	      <% if (user.google.token) { %>
 	        <p><strong>email</strong>: <%= user.google.email %></p>
 	        <p><strong>name</strong>: <%= user.google.name %></p>
