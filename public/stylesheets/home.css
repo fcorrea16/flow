@@ -62,13 +62,16 @@
 /* middle container */
 
 .middle-container{
-	height: 600px;
+	height: 1000px;
 	width: 100%;
 	background-color:#e2e8e9 ;
 	padding-top: 50px;
 	text-align: center;
 }
 
+.middle-container iframe{
+  margin-top: 40px;
+}
 
 .middle-container h2{
 	color: #333333;
@@ -79,11 +82,11 @@
 }
 
 .bottom-container{
-	height: 220px;
+	height: 180px;
 	width: 100%;
 	background-color: rgb(237, 30, 121);
 	text-align: center;
-	padding-top: 80px;	
+	padding-top: 40px;	
 }
 
 .bottom-container h3{
