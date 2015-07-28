@@ -12,32 +12,16 @@
   <meta property="og:image"              content="http://flowchartbuilder.herokuapp.com/images/test.jpg" />
 </head>
 <body>
-  <script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=501839739845103";
-fjs.parentNode.insertBefore(js, fjs);
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1474809519502013";
+  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
-  // <script>
-  //   window.fbAsyncInit = function() {
-  //     FB.init({
-  //       appId      : '1474809519502013',
-  //       xfbml      : true,
-  //       version    : 'v2.4'
-  //     });
-  //   };
-
-  //   (function(d, s, id){
-  //      var js, fjs = d.getElementsByTagName(s)[0];
-  //      if (d.getElementById(id)) {return;}
-  //      js = d.createElement(s); js.id = id;
-  //      js.src = "//connect.facebook.net/en_US/sdk.js";
-  //      fjs.parentNode.insertBefore(js, fjs);
-  //    }(document, 'script', 'facebook-jssdk'));
-  // </script>
 
 
   <% include ../views/partials/menu %>
@@ -67,7 +51,8 @@ fjs.parentNode.insertBefore(js, fjs);
       <% } %>
       <!-- <div class="fb-share-button" data-href="https://flowchartbuilder.herokuapp.com/" data-layout="button"></div> -->
       <br>
-      <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fflowchartbuilder.herokuapp.com%2F">Share on FB</a>
+      <div class="fb-share-button" data-href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fflowchartbuilder.herokuapp.com%2F" data-layout="button"></div>
+      <!-- <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fflowchartbuilder.herokuapp.com%2F">Share on FB</a> -->
     </div> 
 
   </div>
