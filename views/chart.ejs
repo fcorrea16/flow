@@ -13,32 +13,8 @@
     }
   </style>
 
-  <meta property="og:url"              	 content="http://flowchartbuilder.herokuapp.com/" />
-	<meta property="og:type"               content="article" />
-	<meta property="og:title"              content="Build a Flow Chart" />
-	<meta property="og:description"        content="Our app is easy and fun to use. Build Flow Charts that you can save, edit, print and share." />
-	<meta property="og:image"              content="http://flowchartbuilder.herokuapp.com/images/test.jpg" />
- 
 </head>
 <body>
-
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '1474809519502013',
-	      xfbml      : true,
-	      version    : 'v2.4'
-	    });
-	  };
-
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "//connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
 
 	<% include ../views/partials/menu %>
   <% include ../views/partials/nav %>
@@ -60,9 +36,6 @@
 						</form> 
 					<% } %>
 
-					<div class="fb-share-button" data-href="http://flowchartbuilder.herokuapp.com/" data-layout="button">
-
-					</div>
 
 				</div>
 
