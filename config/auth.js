@@ -3,8 +3,8 @@ module.exports = {
 
     'googleAuth' : {
 			'clientID'      : process.env.googleid,
-'clientSecret'  : process.env.googlesecret,
-'callbackURL'   : 'http://flowchartbuilder.herokuapp.com/auth/google/callback'
+			'clientSecret'  : process.env.googlesecret,
+			'callbackURL'   : 'http://flowchartbuilder.herokuapp.com/auth/google/callback'
 
     }
 
